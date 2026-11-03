@@ -1,3 +1,33 @@
+# Topic 8 review — 2026-11-04
+
+Continuing from owner-reported deployed playtest `108dbf5`, on the same draft PR #1 branch. The new content is not merged or deployed. There is no SQL or Pages-workflow diff from that baseline. No hosted database, Cron, production or Room A operation was performed.
+
+## Content and images
+
+- 10 substantive numbered theses, 30 separately numbered sourced claims; each fact appears once in the counting ledger and three distinct IDs support each thesis. Automated uniqueness/source checks plus manual semantic review; no quiz/timeline inflation.
+- 11 wartime profiles, 3 postwar/cultural profiles, 2 context introductions; main desktop/mobile access and home shortcuts. All 16 image-first cards inspected at 360px, including the existing portraits. Photographs, modern photos, stamps, coin relief and museum bust are identified separately.
+- 18 local original files pass SHA-256/signature checks. Мәншүк/Әлия now use identified photos; the original 1995 Мәншүк stamp is separately captioned and byte-identical. [Exact rights/remaining portrait gaps](ARCHIVE_MEDIA.md).
+- All text-source and media-record links were examined with the web tool; Natural Earth terms independently opened. Local images/alt text and source-reference links are checked separately in the browser. HTTP availability does not establish historical truth or future availability.
+- Exact three video titles implemented as waiting entries, **0/3 playable**, no invented URL or empty player; AI/street interviews remain separate.
+
+## Checks actually performed for this update
+
+- `npm run check`, `npm test` (11 test files passed; disposable local PGlite), media hashes, frozen mixed/solo content checks, isolated recipe self-test, static build and all private-bank bundle guards passed.
+- Public Chromium checks: 360/390/768/1366/1920px, eight sections, 10/30 catalogue elements, 16 profiles with 11/3/2 grouping, all image loading/alt text, source references, keyboard fact jumps, main menu access, map selection, three >=44px selected-state period markers with touch/keyboard paths, projector persistence/exit, no horizontal overflow/runtime errors. Final wording/screenshots rechecked at 360/1920px.
+- Existing Chromium practice integration passed: all five actual SQL-scored games, per-game mid-attempt reload/draft restore, failed-save/lost-submit retry, sources/reveals, independent desktop-context 100/100, guest gate/room-code entry and owner reset. These fixtures use local SQL and fixture Auth, not hosted Supabase or Google.
+- All 16 portrait credit blocks were measured to remain inside their cards; an additional local capture pass removed fixed-header/skip-link overlays from element screenshots, without changing the shipped UI. [Review gallery](review/topic8/README.md).
+- Initial local runs caught a test selector expecting a menu label without its visible section number, and a genuine tablet video-grid overflow from long Kazakh titles. Selector corrected; intrinsic grid tracks fixed; affected checks rerun successfully. A temporary pre-asset CI run failed the offline hash check before the image commit arrived; all 18 originals were recovered and the temporary asset workflow removed.
+
+## Limits and release boundary
+
+Local WebKit is not installed; current-head GitHub Actions is the independent WebKit/PostgreSQL 17 check (link/status added after the push). Chromium/WebKit emulation is not a physical iPhone. Safari touch/text zoom/orientation/VoiceOver/background-resume and actual Google/cross-device hosted persistence still need owner acceptance after an approved isolated release. No physical iPhone/Android result is claimed.
+
+Historian/Kazakh editor review remains pending. ARCHIVE_MEDIA.md flags weak Бекмаханов coin resolution, Хиуаз's missing original author/date, stamp substitutes for several archive photos and Төлеген's museum bust. Do not call these full academic biographies or every portrait a verified wartime photograph.
+
+The older evidence below describes the prior archive/practice baseline; it is retained as history, not proof of the new Topic 8 CI result.
+
+<details><summary>Earlier archive/practice verification at the 108dbf5 baseline</summary>
+
 # Isolated archive and solo-practice review evidence
 
 Scope: draft PR #1 in Owen1night/el-zhady-playtest, branch `codex/solo-practice-and-archive-media`. The interrupted edits and both remote asset commits were recovered; no worktree was reset or user changes discarded.
@@ -23,3 +53,5 @@ An initial resumed CI run exposed a PostgreSQL count assertion (`'0'` vs `0`), c
 [Complete later acceptance checklist](PRACTICE_SETUP.md#acceptance-after-a-later-approved-isolated-deployment). Physical iPhone Safari (including markers/portrait/landscape/text zoom, background/resume, touch and VoiceOver) and actual laptop/iPhone Google/cross-device persistence need owner testing after review and a separately approved isolated migration/deployment. No physical device test is claimed. Historian/Kazakh editor review remains pending; introductions stay labelled.
 
 No hosted migration was executed. No Cron configuration, production branch/site/backend, deployed test frontend, or Room A was changed. This draft's new practice backend cannot be exercised on the already-published test URL until its new migration and matching frontend are separately approved.
+
+</details>
