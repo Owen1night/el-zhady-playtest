@@ -3,7 +3,7 @@ import { AccountGate } from './features/Shared';
 import { LearningAtlas } from './features/LearningAtlas';
 import { LearningReadings, LearningTimeline, SourceCatalog } from './features/Learning';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Check, ChevronRight, CircleHelp, Clock3, Copy, Flag, GraduationCap, Landmark, Layers3, ListOrdered, MapPin, Menu, Monitor, Play, QrCode, RotateCcw, Shield, Target, X, UserRound, Users } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Check, ChevronRight, Clock3, Copy, GraduationCap, Landmark, Menu, Monitor, Play, QrCode, Shield, X, UserRound, Users } from 'lucide-react';
 import QRCode from 'qrcode';
 import { activityPlan, facts, figures, sectionPlans, sections, sources, theses, thesisPlan, videos } from './data/content';
 import type { SectionId } from './data/types';
@@ -22,7 +22,6 @@ import { readPreferences, resetPreferences, savePreferences } from './lib/storag
 import { ArchiveArt } from './components/ArchiveArt';
 import { Dialog } from './components/Dialog';
 
-const icons = [CircleHelp, Layers3, ListOrdered, MapPin, Target];
 const deploymentUrl = siteUrl;
 const accountSections: Record<string, { label: string; eyebrow: string; title: string; description: string }> = {
   auth: { label: 'Кіру', eyebrow: 'АККАУНТ / ҚОНАҚ', title: 'Өз оқу жолыңыз.', description: 'Google арқылы тұрақты аккаунтпен кіріңіз немесе сайысқа қонақ ретінде қосылыңыз.' },
@@ -32,7 +31,6 @@ const accountSections: Record<string, { label: string; eyebrow: string; title: s
   admin: { label: 'Әкімші', eyebrow: 'ҚОРҒАЛҒАН БАСҚАРУ', title: 'Сайыс бөлмелерін дайындау', description: 'Тек серверде рұқсат берілген әкімшілерге арналған басқару аймағы.' },
 };
 const link = (id: SectionId) => `#/${id}`;
-function Empty({ title, text }: { title: string; text: string }) { return <div className="empty-state"><BookOpen size={30} /><h3>{title}</h3><p>{text}</p></div>; }
 function Draft({ children = 'Материал дайындалуда' }: { children?: React.ReactNode }) { return <span className="draft"><span />{children}</span>; }
 
 export default function App() {
@@ -46,7 +44,7 @@ export default function App() {
     return () => window.removeEventListener('el-zhady:room-exit', exit);
   }, []);
   const [preferences, setPreferences] = useState(readPreferences);
-  const [storageOk, setStorageOk] = useState(true);
+  const [, setStorageOk] = useState(true);
   const [modal, setModal] = useState<'menu' | 'share' | 'reset' | string | null>(null);
     const [qr, setQr] = useState('');
   const [copyMessage, setCopyMessage] = useState('');
