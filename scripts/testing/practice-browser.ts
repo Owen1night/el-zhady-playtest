@@ -78,8 +78,8 @@ try{
    assert.deepEqual(await page.locator('.order-list>li>strong').allTextContents(),target.map(id=>item.options.find(o=>o.id===id)!.text));
   }else if(kind==='matching'){
    for(const item of draft.items){
-    await page.locator('.matching-grid>div').first().getByRole('button',{name:new RegExp(item.prompt)}).click();
-    await page.locator('.matching-grid>div').nth(1).getByRole('button',{name:item.options.find(o=>o.id===item.correct)!.text,exact:true}).click();
+    await page.locator('.matching-grid>div').first().getByRole('button',{name:new RegExp(item.prompt)}).focus();await page.keyboard.press('Enter');
+    await page.locator('.matching-grid>div').nth(1).getByRole('button',{name:item.options.find(o=>o.id===item.correct)!.text,exact:true}).focus();await page.keyboard.press('Enter');
    }
    await saved(page);await page.reload();await saved(page);assert.equal(await page.locator('.matched-achievement').count(),5);
   }else{
