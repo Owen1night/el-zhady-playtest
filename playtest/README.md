@@ -10,6 +10,8 @@ A localhost URL, the production URL with a test backend, and the automated Playw
 
 ## 1. Separate frontend repository, no production edits
 
+**Status in this repository:** the owner created `Owen1night/el-zhady-playtest`, granted access, and the assistant already copied the prepared bootstrap to `main`. Skip the clone/copy/push commands below; they are retained only as the original reproducible recipe. The remaining action in this section is selecting **GitHub Actions** at https://github.com/Owen1night/el-zhady-playtest/settings/pages . Do not generate another workflow or run a deployment yet. See [SETUP_STATUS.md](SETUP_STATUS.md).
+
 Create an **empty public** repository named `el-zhady-playtest` (no initial README). On your laptop, in a new folder, clone this utility branch, pin it to the reviewed utility commit if desired, then change **this clone's** origin:
 
 ```bash

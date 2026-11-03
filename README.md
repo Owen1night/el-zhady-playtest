@@ -1,3 +1,13 @@
+# Isolated PR #6 playtest — setup in progress
+
+This is **Owen1night/el-zhady-playtest**, the disposable laptop/iPhone test repository. No playable site is deployed yet. Application code and migrations are pinned to PR #6 commit `465574fcc86f44b9d166c998c28a2e0d00a73b25`; the isolated setup kit was copied from `78909c2863a997637d6e6484f69a9bdea17c62c3`.
+
+Use [playtest/SETUP_STATUS.md](playtest/SETUP_STATUS.md) for current progress and [playtest/README.md](playtest/README.md) for isolated setup. Only the manual **Deploy isolated playtest** workflow applies here. A fresh separate Supabase project is still required; do not use production configuration. Expected future URL: `https://owen1night.github.io/el-zhady-playtest/` (not verified live).
+
+The source repository, its PR #5/PR #6 and production Supabase/Cron/Pages are unchanged. The older implementation notes below are inherited reference documentation, **not instructions to deploy this test repository to production**.
+
+---
+
 # Mixed live challenges — second draft
 
 Branch `codex/mixed-live-challenges` builds on PR #5. Suggested quiz → map → timeline; custom supported orders; 50-task bank; persisted room-wide nonrepetition/capacity failure; normalized equal maxima; target-specific host «Сұрақты аяқтау». See MIXED_SCORING.md, MIXED_SETUP.md and MIXED_VERIFICATION.md. Production and hosted SQL/Cron are unchanged. The first slice can be reviewed/released separately. Local build preview: `npm run build && npm run preview -- --port 4173`; public readings work without backend config, but new live games need the reviewed new backend or `npm run test:mixed:browser` with the disposable local service. No public PR preview URL is claimed.
