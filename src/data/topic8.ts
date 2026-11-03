@@ -22,7 +22,7 @@ export const rubricFacts:RubricFact[]=[
  fact(14,'western-kazakhstan-child-care','Балаларға қамқорлық','Батыс Қазақстанда эвакуацияланған балалар үшін санаторийлер мен балабақша топтары ұйымдастырылды.','war','rear-care','west','Балалар санаторийлері мен қосымша балабақша топтары туралы бөлім'),
  fact(15,'rear-defence-fund-donations','Қорғаныс қорына қаржы','Батыс Қазақстан еңбек ұжымдары қорғаныс қорына ақшалай қаражат жинады.','war','rear-care','west','1941 жылғы өзен пароходствосының үндеуі және аудандардың қорғаныс қорына аударымдары'),
  fact(16,'european-war-end-may1945','Еуропадағы соғыстың аяқталуы','Еуропада Екінші дүниежүзілік соғыс 1945 жылғы мамырда аяқталды.','war','victory-context','ushmm','May 7–9, 1945; Victory in Europe'),
- fact(17,'kazakhstan-victory-day-may9','Қазақстандағы Жеңіс күні','Қазақстанның ресми мерекелер күнтізбесінде Жеңіс күні 9 мамыр деп көрсетілген.','war','victory-context','kz-victory-day','Мемлекеттік мерекелер тізіміндегі «9 мамыр — Жеңіс күні»; қазіргі еске алу контексі'),
+ {...fact(17,'victory-holiday-decree-1945','Жеңіс мерекесін бекіту','1945 жылғы 8 мамырда КСРО Жоғарғы Кеңесі Төралқасы 9 мамырды Жеңіс мерекесі деп жариялады.','war','victory-context','victory-decree-1945','ГА РФ. Ф. Р-7523. Оп. 4. Д. 348. Л. 152; 8 мая 1945 г.'),sourceRefs:[{sourceId:'victory-decree-1945',locator:'Түпнұсқа жарлықтың каталогы: 8 мая 1945 г.; ГА РФ. Ф. Р-7523. Оп. 4. Д. 348. Л. 152'},{sourceId:'kz-victory-origin',locator:'Кіріспе және «Социалистік Қазақстан», 9 мамыр 1945, №90 санында жарияланған жарлықтың қазақша мәтіні'}]},
  fact(18,'japanese-surrender-september1945','Жапонияның тізе бүгуі','Жапония 1945 жылғы 2 қыркүйекте ресми түрде тізе бүкті; бұл оқиға дүниежүзілік соғыстың аяқталуымен байланысты.','war','victory-context','ushmm','September 2, 1945; Japanese surrender'),
  fact(19,'fourth-five-year-plan-1946','Қалпына келтіру жоспары','1946 жылғы наурызда 1946–1950 жылдарға арналған шаруашылықты қалпына келтіру және дамыту жоспары бекітілді.','postwar','recovery-plan','recovery','Өнеркәсіп бөлімі: 1946 жылғы 18 наурызда бекітілген даму жоспары'),
  fact(20,'postwar-heavy-industry-priority','Ауыр өнеркәсіпке басымдық','Соғыстан кейінгі кеңестік экономикалық саясатта ауыр өнеркәсіпті дамытуға басымдық берілді.','postwar','recovery-plan','recovery','Экономиканы нығайтудың негізгі бағыттары туралы абзац'),
@@ -50,7 +50,7 @@ const thesisContent:[string,string,string][]=[
  ['Саяси қудалау ғылыми еркіндікті шектеді','Ғылыми пікірталастың саяси айыпқа айналуы Бекмахановтың ісінен көрінеді. 1953 жыл кезең шегі болғанымен, әкімшіл жүйе мен оның салдары бірден жойылған жоқ.','postwar'],
 ];
 export const rubricTheses:(Thesis&{number:number})[]=thesisContent.map(([title,text],i)=>{
- const items=rubricFacts.slice(i*3,i*3+3);const refs:SourceReference[]=items.flatMap(f=>f.sourceRefs);
+ const items=rubricFacts.slice(i*3,i*3+3);const refs:SourceReference[]=items.flatMap(f=>f.sourceRefs);if(i===5)refs.push({sourceId:'kz-victory-day',locator:'Қазіргі Қазақстан күнтізбесіндегі 9 мамыр; бұл қазіргі еске алу контексі, қосымша тарихи факт ретінде саналмайды'});
  return {id:`thesis-${String(i+1).padStart(2,'0')}`,number:i+1,title,text,factIds:items.map(f=>f.id),status:'sourced',sourceRefs:refs as [SourceReference,...SourceReference[]],checkedOn:'2026-11-04',editorialNote:editorial};
 });
 export type VideoSlot={id:string;number:number;title:string;state:'awaiting-media';media:null;note:string};

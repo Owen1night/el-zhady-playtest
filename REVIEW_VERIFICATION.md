@@ -4,7 +4,7 @@ Continuing from owner-reported deployed playtest `108dbf5`, on the same draft PR
 
 ## Content and images
 
-- 10 substantive numbered theses, 30 separately numbered sourced claims; each fact appears once in the counting ledger and three distinct IDs support each thesis. Automated uniqueness/source checks plus manual semantic review; no quiz/timeline inflation.
+- 10 substantive numbered theses, 30 separately numbered sourced claims; each fact appears once in the counting ledger and three distinct IDs support each thesis. Automated uniqueness/source checks plus manual semantic review; no quiz/timeline inflation. All 30 counted claims concern 1939–1953; current holiday-calendar context is separate. A final source pass replaced the current-calendar fact with the actual 8 May 1945 decree (archive catalogue + ҚазАқпарат’s contemporary newspaper reproduction).
 - 11 wartime profiles, 3 postwar/cultural profiles, 2 context introductions; main desktop/mobile access and home shortcuts. All 16 image-first cards inspected at 360px, including the existing portraits. Photographs, modern photos, stamps, coin relief and museum bust are identified separately.
 - 18 local original files pass SHA-256/signature checks. Мәншүк/Әлия now use identified photos; the original 1995 Мәншүк stamp is separately captioned and byte-identical. [Exact rights/remaining portrait gaps](ARCHIVE_MEDIA.md).
 - All text-source and media-record links were examined with the web tool; Natural Earth terms independently opened. Local images/alt text and source-reference links are checked separately in the browser. HTTP availability does not establish historical truth or future availability.
@@ -20,7 +20,7 @@ Continuing from owner-reported deployed playtest `108dbf5`, on the same draft PR
 
 ## Limits and release boundary
 
-Local WebKit is not installed; current-head GitHub Actions is the independent WebKit/PostgreSQL 17 check (link/status added after the push). Chromium/WebKit emulation is not a physical iPhone. Safari touch/text zoom/orientation/VoiceOver/background-resume and actual Google/cross-device hosted persistence still need owner acceptance after an approved isolated release. No physical iPhone/Android result is claimed.
+Local WebKit is not installed; [current-head PR checks](https://github.com/Owen1night/el-zhady-playtest/pull/1/checks) provide the independent WebKit/PostgreSQL 17 result; consult that status rather than inferring success from earlier runs. Chromium/WebKit emulation is not a physical iPhone. Safari touch/text zoom/orientation/VoiceOver/background-resume and actual Google/cross-device hosted persistence still need owner acceptance after an approved isolated release. No physical iPhone/Android result is claimed.
 
 Historian/Kazakh editor review remains pending. ARCHIVE_MEDIA.md flags weak Бекмаханов coin resolution, Хиуаз's missing original author/date, stamp substitutes for several archive photos and Төлеген's museum bust. Do not call these full academic biographies or every portrait a verified wartime photograph.
 

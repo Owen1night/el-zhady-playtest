@@ -16,7 +16,7 @@ Public learning requires neither Auth nor backend availability. Existing Supabas
 - `src/data/topic8.ts`: 10 actual numbered theses and 30 distinct numbered facts, stable IDs/claim keys, three fact references per thesis. Only this catalogue contributes the rubric fact count.
 - `src/data/learning.ts`: 13 broader readings and 12 own-event timeline descriptions, existing sources and postwar/context figures. Repetitions do not increase the fact count.
 - `src/data/war-heroes.ts`: nine additions to Әлия/Мәншүк → 11 wartime profiles. Three postwar/cultural and two context figures stay separate.
-- `src/data/topic8-sources.ts`: ten additional individually checked references, including Kazakhstan primary sources for terminology/May 9 observance. Old source metadata and frozen game snapshots are preserved.
+- `src/data/topic8-sources.ts`: twelve additional individually checked references, including Kazakhstan primary sources for terminology/May 9 observance. Old source metadata and frozen game snapshots are preserved.
 - `src/assets/archive/registry.json`: exact original URL, identity, caption, creator or unknown creator, date or unknown date, record-specific rights, treatment and SHA-256 for 18 originals.
 
 Content is **sourced**, not academically verified. Text interpretation, source quality and image rights are separate reviews. Unknown provenance and historian/Kazakh editor review needs remain explicit.

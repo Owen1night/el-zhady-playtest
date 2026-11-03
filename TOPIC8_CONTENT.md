@@ -63,7 +63,9 @@ Supporting facts: fact-13, fact-14, fact-15.
 Supporting facts: fact-16, fact-17, fact-18.
 
 - [United States Holocaust Memorial Museum — World War II Dates and Timeline](https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates): May 7–9, 1945; Victory in Europe
-- [ҚР Еңбек және халықты әлеуметтік қорғау министрлігі — 2026 жылға арналған өндірістік күнтізбе](https://www.gov.kz/org/enbek/documents/details/1034069): Мемлекеттік мерекелер тізіміндегі «9 мамыр — Жеңіс күні»; қазіргі еске алу контексі
+- [Original 1945 decree catalogue](https://www.prlib.ru/item/2037371): ГА РФ. Ф. Р-7523. Оп. 4. Д. 348. Л. 152.
+- [ҚазАқпарат / contemporary Kazakh newspaper reproduction](https://kaz.inform.kz/news/9-mamyr-zhenis-merekesi-retinde-algash-ret-resmi-turde-kalay-zhariyalandy_a2774579/): 8 May 1945 decree.
+- [Current Kazakhstan calendar](https://www.gov.kz/org/enbek/documents/details/1034069): current May 9 remembrance context, not an additional numbered fact.
 - [United States Holocaust Memorial Museum — World War II Dates and Timeline](https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates): September 2, 1945; Japanese surrender
 
 ### 07. Қалпына келтірудің нәтижесі мен қайшылығын қатар бағалау
@@ -108,7 +110,7 @@ Supporting facts: fact-28, fact-29, fact-30.
 
 ## Thirty distinct historical claims
 
-This is the counting ledger: one ID/semantic claim per row below. More occurrences in biographies, study text, timelines or questions do not add facts. An automated test rejects duplicate IDs, claim keys/text and missing sources; the manual ledger records the semantic review. Fact 17 deliberately describes current remembrance context rather than pretending the present holiday law existed in 1945.
+This is the counting ledger: one ID/semantic claim per row below. More occurrences in biographies, study text, timelines or questions do not add facts. An automated test rejects duplicate IDs, claim keys/text and missing sources; the manual ledger records the semantic review. Fact 17 describes the actual 8 May 1945 decree, supported by its archive catalogue and Kazakhstan’s national news agency reproduction of the contemporary Kazakh newspaper. Today’s holiday calendar is separate contextual evidence and adds no rubric fact.
 
 ### 01. Екінші дүниежүзілік соғыстың басталуы
 
@@ -238,13 +240,14 @@ ID: `fact-16`; claim: `european-war-end-may1945`.
 
 - [United States Holocaust Memorial Museum — World War II Dates and Timeline](https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates): May 7–9, 1945; Victory in Europe
 
-### 17. Қазақстандағы Жеңіс күні
+### 17. Жеңіс мерекесін бекіту
 
-Қазақстанның ресми мерекелер күнтізбесінде Жеңіс күні 9 мамыр деп көрсетілген.
+1945 жылғы 8 мамырда КСРО Жоғарғы Кеңесі Төралқасы 9 мамырды Жеңіс мерекесі деп жариялады.
 
-ID: `fact-17`; claim: `kazakhstan-victory-day-may9`.
+ID: `fact-17`; claim: `victory-holiday-decree-1945`.
 
-- [ҚР Еңбек және халықты әлеуметтік қорғау министрлігі — 2026 жылға арналған өндірістік күнтізбе](https://www.gov.kz/org/enbek/documents/details/1034069): Мемлекеттік мерекелер тізіміндегі «9 мамыр — Жеңіс күні»; қазіргі еске алу контексі
+- [Original decree archive catalogue](https://www.prlib.ru/item/2037371): 8 May 1945; ГА РФ. Ф. Р-7523. Оп. 4. Д. 348. Л. 152. Catalogue identifies the original; no scan was embedded or transcribed by us.
+- [ҚазАқпарат — decree history and Kazakh reproduction](https://kaz.inform.kz/news/9-mamyr-zhenis-merekesi-retinde-algash-ret-resmi-turde-kalay-zhariyalandy_a2774579/): introduction and «Социалистік Қазақстан», 9 May 1945, №90. Only this dated decree claim is used; the article’s speculative political explanations/statistics are not imported.
 
 ### 18. Жапонияның тізе бүгуі
 
