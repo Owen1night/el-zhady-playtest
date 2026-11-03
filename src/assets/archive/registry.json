@@ -92,7 +92,8 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Full Commons artifact; existing Commons crop for Stalin, no further crop",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "9522e453b26515876398768caa11110ea679ee14d2c839925746a758518abef0"
   },
   {
     "id": "stalin",
@@ -107,6 +108,7 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army",
     "checkedOn": "2026-11-03",
     "changes": "Full Commons artifact; existing Commons crop for Stalin, no further crop",
-    "kind": "portrait photograph"
+    "kind": "portrait photograph",
+    "sha256": "ab1f7f4eb46060f06732564273267d7342399f1cb26e2c0c67e772f4b6a2e700"
   }
 ]
