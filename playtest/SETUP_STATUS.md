@@ -1,25 +1,34 @@
-# Isolated playtest — repository prepared, not deployed
+# Isolated playtest — backend setup reported complete, frontend pending
 
-Application source: PR #6 `465574fcc86f44b9d166c998c28a2e0d00a73b25`.
-Setup kit: `f558c664fc6149be2cdd3d62ecd62c5577205d2a`.
-Prepared bootstrap copied to this repository: `78909c2863a997637d6e6484f69a9bdea17c62c3`.
+Test repository: `Owen1night/el-zhady-playtest`.
+Test Supabase project: **`isufimcphbxhkmrquocc`** (`el-zhady-playtest`).
+Pinned application/migration source: PR #6 **`465574fcc86f44b9d166c998c28a2e0d00a73b25`**.
+The later PR #5 editorial revision is not silently incorporated into this pinned PR #6 snapshot. Both source PRs remain draft/unmerged. Production main remains `e60d7d483ad6e4f518c81329527e3382170b02e2`.
 
-## Verified progress
+## Completed infrastructure and owner reports
 
-- Owner created the empty public `Owen1night/el-zhady-playtest` repository and granted the GitHub integration access.
-- Assistant pushed the prepared bootstrap to this test repository's `main` without altering the source repository's main or either draft PR.
-- `.github/workflows/pages.yml` matches the reviewed isolated template: manual dispatch only; both deployment jobs refuse `Owen1night/el-zhady`.
-- The copied commit was verified through GitHub's branch API. No Actions runs or deployments were created by that push.
-- The existing kit's repository/backend guards, storage namespaces and transformed fixture build previously passed CI. They do not establish hosted Auth, database, scheduler or device acceptance.
+- Assistant copied the prepared isolated bootstrap to this separate repository; Pages workflow is manual-only and refuses the production repository. Owner reports GitHub Actions selected as Pages source. No deployment runs existed at the latest API inspection.
+- Owner created the separate empty test project and reports all seven pinned migrations ran manually once, with success. None was executed against hosted Supabase by the assistant. Do not rerun them or use blanket `db push`.
 
-## Owner-reported configuration
+| Version | Test-project status |
+|---|---|
+| 20261101000100_stage2_foundation | Applied manually once, owner report |
+| 20261101000200_live_quiz | Applied manually once, owner report |
+| 20261101000300_live_quiz_content_v1 | Applied manually once, owner report |
+| 20261103000100_competition_lifecycle | Applied manually once, owner report |
+| 20261103000200_question_bank_v2 | Applied manually once, owner report |
+| 20261103000300_mixed_live_engine | Applied manually once, owner report and success screenshot |
+| 20261103000400_mixed_bank_v3 | Applied manually once, owner report |
 
-The owner reports selecting **GitHub Actions** as the Pages source in this test repository. This is recorded as owner-reported, not independently verified administration state. No deployment has run; branch/API checks still show no Actions runs.
+- Owner enabled test Cron and ran pinned scheduler setup once. Screenshots show both jobs active, quiz every1second with the exact tick command, cleanup daily `17 3 * * *`, cleanup command equality true, and five recent succeeded quiz runs about one second apart. Owner reports scheduler readiness true. This does not establish an actual daily cleanup execution or gameplay acceptance.
+- Owner reports mixed bank count/distinct count map10/10, quiz30/30, timeline10/10; early-timeout RPC exists, reservation RLS true, unauthenticated anon execute false.
+- Screenshots show all four expected admin SELECT result policies, and Realtime contains only public live_competitions/live_quiz_sessions/room_participants/rooms.
+- Owner reports anonymous sign-ins enabled on the test project.
 
-## Current owner-only step
+These observations are distinguished from independent hosted SQL/Auth execution, which the assistant has not performed. Manual SQL Editor application does not reconcile CLI migration history. Do not rerun migrations or Cron setup.
 
-Create a **new empty Supabase project** named `el-zhady-playtest` in the owner's existing Free organization via https://supabase.com/dashboard → **New project**. Keep its generated database password private. Choose a nearby region, then **Create new project** and wait for provisioning. If the Free plan has no available project slot, stop and report the quota message rather than upgrading, deleting or pausing production.
+## Remaining work
 
-Send only the new project's dashboard URL or public project reference after creation. Do not run SQL or change Auth/Cron yet. This session has no configured Supabase connection or project-management credentials; project creation requires the owner's account. The new project must be separate from production, with no production data copied.
+Follow [REMAINING_CHECKLIST.md](REMAINING_CHECKLIST.md) for all remaining steps, explicit wait gates and grouped read-only reports: test Site URL/redirect, Google client/provider, CAPTCHA consistency, private API schema review, public build variables, verified test deployment, first permanent host login/test-only admin grant, laptop/iPhone acceptance, capacity/uniqueness/privacy/reconnection/moderation checks and evidence.
 
-Test-project migrations, Auth, Cron, public build variables and deployment remain pending. No SQL has been executed by this setup work. Continue [the guide](README.md) one owner action at a time; production must remain unchanged.
+No test URL is claimed live. No production settings/data/keys/Cron/Pages or source PR branches were changed. The assistant's documentation-query validation uses only disposable local in-memory PGlite, never the hosted test or production database.

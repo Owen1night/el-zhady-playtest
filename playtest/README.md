@@ -2,6 +2,10 @@
 
 Application source: PR #6 commit `465574fcc86f44b9d166c998c28a2e0d00a73b25`. This utility branch adds only review/setup files; it does not edit the PR application, migrations, Cron or production workflows. This is a proposed isolated deployment recipe, NOT a deployed test site or configured Supabase project. No hosted SQL/Cron is executed by the recipe's CI check. Both PRs remain draft/unmerged.
 
+## Current owner progress
+
+All seven test-project migrations and test scheduler installation are reported successful; anonymous sign-ins are enabled. **Do not repeat installation below.** Use [the remaining checklist](REMAINING_CHECKLIST.md) for the rest of setup and all acceptance checks, with grouped reporting and wait gates. [SETUP_STATUS.md](SETUP_STATUS.md) records owner reports versus screenshot/assistant evidence. The original reproducible recipe below is retained for reference.
+
 ## Recommended path
 
 Use **one fresh empty Supabase test project + one separate public GitHub Pages test repository**, e.g. `Owen1night/el-zhady-playtest`. This keeps HTTPS, Safari, real anonymous Auth, real RLS/Realtime and a host-independent scheduler. It uses the same providers; no alternate hosting provider or paid Supabase branching is required. Check you have an available free project slot; stop if not, instead of upgrading just for this test.

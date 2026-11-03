@@ -2,7 +2,7 @@
 
 This is **Owen1night/el-zhady-playtest**, the disposable laptop/iPhone test repository. No playable site is deployed yet. Application code and migrations are pinned to PR #6 commit `465574fcc86f44b9d166c998c28a2e0d00a73b25`; the isolated setup kit was copied from `78909c2863a997637d6e6484f69a9bdea17c62c3`.
 
-Use [playtest/SETUP_STATUS.md](playtest/SETUP_STATUS.md) for current progress and [playtest/README.md](playtest/README.md) for isolated setup. Only the manual **Deploy isolated playtest** workflow applies here. A fresh separate Supabase project is still required; do not use production configuration. Expected future URL: `https://owen1night.github.io/el-zhady-playtest/` (not verified live).
+Use [playtest/SETUP_STATUS.md](playtest/SETUP_STATUS.md) for current progress and [the complete remaining checklist](playtest/REMAINING_CHECKLIST.md) for setup, wait gates and laptop/iPhone acceptance. The original isolated recipe remains in [playtest/README.md](playtest/README.md). Only the manual **Deploy isolated playtest** workflow applies here. A fresh separate Supabase project is still required; do not use production configuration. Expected future URL: `https://owen1night.github.io/el-zhady-playtest/` (not verified live).
 
 The source repository, its PR #5/PR #6 and production Supabase/Cron/Pages are unchanged. The older implementation notes below are inherited reference documentation, **not instructions to deploy this test repository to production**.
 
