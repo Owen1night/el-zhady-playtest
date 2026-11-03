@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
 import type { BrowserContext, Page } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync,realpathSync } from 'node:fs';
 import { actors, liveHarness, testEpoch as epoch } from '../../supabase/tests/live-harness';
 const h = await liveHarness(true,true);
 if (!h.realPostgres) { await h.close(); throw new Error('Browser integration requires isolated PostgreSQL on loopback port 55433'); }
@@ -14,7 +14,7 @@ process.env.VITE_SUPABASE_URL='https://quiz-test.invalid';
 process.env.VITE_SUPABASE_PUBLISHABLE_KEY='sb_publishable_local_fixture_only';
 process.env.VITE_PUBLIC_SITE_URL='https://owen1night.github.io/el-zhady/';
 process.env.VITE_TURNSTILE_SITE_KEY='';
-const vite = await createServer({server:{host:'127.0.0.1',port:4175,strictPort:true}});
+const vite = await createServer({server:{host:'127.0.0.1',port:4175,strictPort:true,fs:{allow:[process.cwd(),realpathSync('node_modules')]}}});
 await vite.listen();
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE_PATH ? {executablePath:process.env.CHROMIUM_EXECUTABLE_PATH} : existsSync('/usr/bin/chromium') ? {executablePath:'/usr/bin/chromium'} : {}),args:['--no-sandbox']});
 const contexts:BrowserContext[]=[]; const errors:string[]=[]; const responses:{rpc:string;payload:unknown}[]=[];

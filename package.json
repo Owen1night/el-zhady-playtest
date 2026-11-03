@@ -18,7 +18,10 @@
     "test:mixed": "node --import tsx --test supabase/tests/mixed.test.ts",
     "test:mixed:browser": "node --import tsx scripts/testing/mixed-browser.ts",
     "test:learning:browser": "node --import tsx scripts/testing/learning-browser.ts",
-    "check:mixed-content": "node --import tsx scripts/generate-mixed-bank.ts --check"
+    "check:mixed-content": "node --import tsx scripts/generate-mixed-bank.ts --check",
+    "test:practice:browser": "node --import tsx scripts/testing/practice-browser.ts",
+    "check:media": "node scripts/fetch-reviewed-media.mjs --check",
+    "check:solo-content": "node --import tsx scripts/check-solo-content.ts"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.8",

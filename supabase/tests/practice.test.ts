@@ -36,12 +36,39 @@ test('solo practice: five real loops, authoritative grading, private persistence
  [key[0],key[1]]=[key[1],key[0]];
  assert.equal((await h.rpc<any>(a.player,'practice_submit',[retry.id,JSON.stringify({order:key})])).score,12);
  assert.equal((await h.query<{score:number}>("select score from public.practice_results where user_id=$1 and activity_id='ordering'",[a.player])).rows[0].score,20,'best score preserved');
+ // Wrong answers earn zero for every type; no completion bonus or speed component.
+ for(const kind of ['quiz','matching','ordering','map','classification']){
+  const fresh=await h.rpc<any>(a.player2,'practice_begin',[kind,randomUUID()]);
+  const items=(await h.query<{items:any[]}>('select items from el_zhady_private.practice_attempts where id=$1',[fresh.id])).rows[0].items;
+  let wrong:Record<string,string|string[]>;
+  if(kind==='ordering'){const order=items[0].correct.split('>');wrong={order:[...order.slice(1),order[0]]};}
+  else if(kind==='matching')wrong=Object.fromEntries(items.map((q,i)=>[q.id,items[(i+1)%5].correct]));
+  else wrong=Object.fromEntries(items.map(q=>[q.id,q.options.find((o:any)=>o.id!==q.correct).id]));
+  assert.equal((await h.rpc<any>(a.player2,'practice_submit',[fresh.id,JSON.stringify(wrong)])).score,0,kind+' wrong answers');
+ }
+ if(h.realPostgres){
+  // Concurrent requests use separate connections/transactions in PostgreSQL.
+  const request=randomUUID();
+  const starts=await Promise.all(Array.from({length:4},()=>h.rpc<any>(a.player3,'practice_begin',['quiz',request])));
+  assert.equal(new Set(starts.map(x=>x.id)).size,1,'racing begin requests create one attempt');
+  const id=starts[0].id;
+  const items=(await h.query<{items:any[]}>('select items from el_zhady_private.practice_attempts where id=$1',[id])).rows[0].items;
+  const answers=JSON.stringify(Object.fromEntries(items.map(q=>[q.id,q.correct])));
+  const results=await Promise.all(Array.from({length:4},()=>h.rpc<any>(a.player3,'practice_submit',[id,answers])));
+  assert(results.every(x=>x.score===20));
+  assert.equal((await h.query<{n:number}>('select count(*)::int n from public.practice_results where user_id=$1',[a.player3])).rows[0].n,1);
+ }
+ for(const name of ['practice_save','practice_submit'])await assert.rejects(h.rpc(a.guest,name,[attempts.quiz,'{}']),/REGISTERED_REQUIRED/);
+ await assert.rejects(h.rpc(a.guest,'practice_reset'),/REGISTERED_REQUIRED/);
  const other=await h.rpc<any>(a.outsider,'practice_begin',['quiz',randomUUID()]);
  const otherItems=(await h.query<{items:any[]}>('select items from el_zhady_private.practice_attempts where id=$1',[other.id])).rows[0].items;
  await h.rpc(a.outsider,'practice_submit',[other.id,JSON.stringify(Object.fromEntries(otherItems.map(q=>[q.id,q.correct])))]);
+ const room=await h.createRoom();
+ const member=await h.rpc<any>(a.player,'join_room',[room.code,'Сынақшы']);
+ await h.query('insert into public.competition_results(participant_id,room_id,display_name_snapshot,display_suffix,score) values($1,$2,$3,1,73)',[member.participant_id,room.id,'Сынақшы']);
  await h.rpc(a.player,'practice_reset');
  assert.equal((await h.query('select * from public.practice_results where user_id=$1',[a.player])).rows.length,0);
  assert.equal((await h.query('select * from public.practice_results where user_id=$1',[a.outsider])).rows.length,1);
- assert.equal((await h.query('select count(*)::int n from public.live_quiz_results')).rows[0].n,0);
+ assert.equal((await h.query<{score:number}>('select score from public.competition_results where participant_id=$1',[member.participant_id])).rows[0].score,73,'reset preserves earned competition scores');
  }finally{await h.close();}
 });

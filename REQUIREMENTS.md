@@ -137,3 +137,21 @@ No content or function is marked complete from a plan alone. See STAGE3_VERIFICA
 | Required tests/build/docs | Types/tests/build/private bundle guard; actual PostgreSQL + separate Chromium sessions; setup guide | Hosted/physical checks explicitly pending |
 
 A passing local fixture test is not physical iPhone or hosted Realtime/Cron verification. Mid-question Safari answer recovery and continued play with a closed host tab remain on the device checklist even though local Chromium recovery tests pass.
+
+
+## Current isolated archive / solo draft (supersedes earlier practice placeholders)
+
+| Requirement | Current checked implementation | Still pending |
+| --- | --- | --- |
+| Actual 1995 Мәншүк stamp | Exact Commons artifact bundled, visually inspected, credited PD-KZ-exempt; stamp/photo distinction explicit | Owner review; no deployment |
+| Every currently named person portrait | Seven image-first introduction cards including Әуезов, Әлия and two context figures | Full biography/historian review; 11 heroes assessment still unfinished |
+| Relevant visuals on existing substantive cards | All 13 readings and 12 events have a credited artifact or explicitly sourced original diagram | More historical content remains outside this slice |
+| Classroom projection controls | Labelled optional layout preference, phone menu, persistent preference/clear exit; touch/keyboard/360px checked | Physical Safari/large classroom screen acceptance |
+| Three visible timeline markers | Native >=44px buttons, explicit selected state, one-period information/filtering, keyboard/touch tests | Physical iPhone Safari |
+| Five genuinely different standard solo games | Quiz, person matching, 5-event ordering, map identification, classification; server-authoritative real scoring | New migration and frontend have NOT been applied/deployed remotely |
+| Result after each / combined / profile persistence | Five /20 best-score slots, /100 total; SQL-owned attempts/drafts, permanent-account gate, retry/reset; independent browser-context SQL evidence | Actual hosted Google/cross-device acceptance |
+| Separate competition scores/privacy | Guest denial, foreign-owner RLS, immutable completed submission, no direct client score writes; reset preserves earned live history | Hosted acceptance after separate approval |
+| Public readings / normal host and join | Public sections accessible unconfigured; normal mixed host/guest flows regression checked | Physical devices |
+| Draft delivery / production unchanged | Existing isolated PR updated, original seven migration files/Pages workflow unchanged; only local disposable SQL fixtures | No merge, deployment, hosted SQL/Cron or Room A action authorised |
+
+Evidence and limits: REVIEW_VERIFICATION.md. Rights: ARCHIVE_MEDIA.md. Assessment content is **sourced**, never marked academically verified; 10 theses, 30 facts, 11 heroes and three functioning videos are not completed by this update.

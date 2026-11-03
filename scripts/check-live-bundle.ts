@@ -16,3 +16,8 @@ const mixedPrompts=[...mixed.matchAll(/\('34000000-[^']+','[^']+',\d+,'((?:[^']|
 assert.equal(mixedPrompts.length,30);
 for(const value of ['LIVE_PRIVATE_MIXED_V3','34000000-0000-4000-8000-',...mixedPrompts])assert(!payload.includes(value),'Private mixed question/seed entered browser JS');
 console.log('Mixed bundle guard: all 30 new authored prompts and private seed IDs/marker absent.');
+
+const solo=JSON.parse(await readFile('supabase/content/solo-v1.json','utf8'));
+for(const value of ['practice_sets','role-auezov','role-bekmakhanov','event-1952>'])assert(!payload.includes(value),'Private solo bank entered browser JS');
+for(const items of Object.values(solo) as {sources:{url:string}[]}[][])for(const item of items)assert(item.sources.length&&item.sources.every(s=>s.url.startsWith('https://')),'Solo answers require original source references');
+console.log('Solo bundle/source guard: private matching keys and practice bank absent; all additional answers have source references.');

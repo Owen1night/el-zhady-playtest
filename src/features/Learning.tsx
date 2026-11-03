@@ -1,3 +1,4 @@
+import {learningPeriods as periods} from '../data/visuals';
 import {ArchiveMedia,ArchiveCredit,EventVisual} from './ArchiveMedia';
 import { useState } from 'react';
 import { contextFigures, learningFacts, learningFigures, learningGroups, learningSources, learningTimeline } from '../data/learning';
@@ -14,7 +15,6 @@ export function LearningReadings({ section }: { section: string }) {
     {(section === 'heroes' || section === 'front') && <div className="archive-artifact"><ArchiveMedia id="manshuk"/></div>}
   </div>;
 }
-const periods=[{id:'context',years:'1939–1941',label:'Соғысқа дейін және басталуы',text:'Екінші дүниежүзілік соғыс 1939 жылы басталды. 1941 жылғы КСРО-ға шабуыл — жеке оқиға.'},{id:'war',years:'1941–1945',label:'Майдан және тыл',text:'Майдандағы қызмет, эвакуация, еңбек пен қамқорлық оқиғаларын қарастырыңыз.'},{id:'postwar',years:'1946–1953',label:'Соғыстан кейін',text:'Қалпына келтіру, ғылым, мәдениет пен ғалымдарды қудалау оқиғалары.'}];
 export function LearningTimeline() {
  const [period,setPeriod]=useState('all');const selected=periods.find(p=>p.id===period);
  return <section className="learning-timeline"><div className="period-selector"><div className="period-markers" role="group" aria-label="Хронология кезеңі">{periods.map(p=><button type="button" className="period-marker" key={p.id} aria-pressed={period===p.id} aria-controls="period-information" onClick={()=>setPeriod(p.id)}><span className="visible-marker" aria-hidden="true"/><strong>{p.years}</strong><span>{p.label}</span></button>)}</div><button className="button secondary all-periods" aria-pressed={period==='all'} onClick={()=>setPeriod('all')}>Барлығы</button><div id="period-information" className="period-info" aria-live="polite"><h3>{selected?.label||'1939–1953: барлық оқиғалар'}</h3><p>{selected?.text||'Кезең белгісін басыңыз: оның сипаттамасы мен оқиғалары көрсетіледі.'}</p></div></div><ol>{learningTimeline.filter(e=>period==='all'||e.period===period).map(e=><li key={e.id}><time dateTime={e.date}>{e.date}</time><div className="timeline-event-copy"><EventVisual id={e.id} date={e.date} title={e.title} refs={e.sourceRefs}/><h3>{e.title}</h3><p>{e.description}</p><References refs={e.sourceRefs}/></div></li>)}</ol><p className="caption">Жыл немесе ай ғана берілсе, нақты күн нақтыланған жоқ. Сызбалар — дерекке негізделген оқу бейнелері.</p></section>;

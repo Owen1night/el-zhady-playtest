@@ -1,3 +1,15 @@
+# Current isolated review draft
+
+This branch is the unmerged, undeployed archive/solo-practice update for **Owen1night/el-zhady-playtest**, draft [PR #1](https://github.com/Owen1night/el-zhady-playtest/pull/1). Earlier release notes below describe prior stages and do not establish this draft as deployed.
+
+- [Review, actual projector behavior and test evidence](REVIEW_VERIFICATION.md)
+- [All seven exact image records and reuse rights](ARCHIVE_MEDIA.md)
+- [Solo architecture, pending migration and later laptop/iPhone checklist](PRACTICE_SETUP.md)
+
+Local public-reading preview: `npm ci`, `npm run dev` (then open the Vite URL). Static preview: `npm run build`, `npm run preview`. Without the reviewed new backend migration/configuration the practice service is unavailable; there are no fake scores. Do not point this branch at production. This task has not deployed a new public preview.
+
+Checks: `npm run check`, `npm test`, `npm run check:media`, `npm run check:mixed-content`, `npm run check:solo-content`, `npm run build`. Browser fixtures: `npm run test:learning:browser`, `npm run test:practice:browser`; use a disposable PostgreSQL 17 service on **loopback port 55433**, `LIVE_QUIZ_TEST_DATABASE_URL=postgresql://postgres@127.0.0.1:55433/postgres` for independent-connection races and `npm run test:mixed:browser`. Never pass a hosted connection URL. Each fixture creates/deletes only its own temporary local database. `BROWSER=webkit` selects WebKit for learning/practice when installed.
+
 # Isolated PR #6 playtest — setup in progress
 
 This is **Owen1night/el-zhady-playtest**, the disposable laptop/iPhone test repository. No playable site is deployed yet. Application code and migrations are pinned to PR #6 commit `465574fcc86f44b9d166c998c28a2e0d00a73b25`; the isolated setup kit was copied from `78909c2863a997637d6e6484f69a9bdea17c62c3`.
