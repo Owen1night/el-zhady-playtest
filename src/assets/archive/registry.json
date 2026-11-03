@@ -125,7 +125,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "1937 жылғы бейне; соғыс кезіндегі түсірілім емес. Commons келтірген бастапқы жарияланым: 1944 жылғы газет."
+    "note": "1937 жылғы бейне; соғыс кезіндегі түсірілім емес. Commons келтірген бастапқы жарияланым: 1944 жылғы газет.",
+    "sha256": "0cb7f42b4db4b250b9073cfddc099cb56002a47c3467c18d6fbec0d6201fd5f5"
   },
   {
     "id": "aliya-photo",
@@ -141,7 +142,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Commons сипаттамасындағы уақыт аралығы сақталды; нақты күн белгісіз."
+    "note": "Commons сипаттамасындағы уақыт аралығы сақталды; нақты күн белгісіз.",
+    "sha256": "2c8b56456f23beaad978bc3611d79d60498935b51aab185fc7279e9b4ca3a548"
   },
   {
     "id": "bauyrzhan",
@@ -157,7 +159,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Egemen архивінен Commons-қа берілген фотодан алынған дайын қиынды; нақты түсірілген жылы анықталмаған."
+    "note": "Egemen архивінен Commons-қа берілген фотодан алынған дайын қиынды; нақты түсірілген жылы анықталмаған.",
+    "sha256": "262f2704c949249c5c3338f788c0419c729b22d40606b9bccd4d3e9bc559f3ea"
   },
   {
     "id": "talgat",
@@ -173,7 +176,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Соғыстан кейінгі фотосурет; Commons-тағы дайын қиынды өзгеріссіз берілді."
+    "note": "Соғыстан кейінгі фотосурет; Commons-тағы дайын қиынды өзгеріссіз берілді.",
+    "sha256": "1bcb10aa2b03bc10ace443167d83f0ed3dcb76707c5ba202b72f9bcbaf72175a"
   },
   {
     "id": "malik",
@@ -189,7 +193,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "commemorative portrait",
-    "note": "Толық марка; фотопортрет ретінде берілмейді."
+    "note": "Толық марка; фотопортрет ретінде берілмейді.",
+    "sha256": "4beb04df67cf4200e45ccd5313c978490c6c159df633fb41f1843bf4448f3155"
   },
   {
     "id": "nurken",
@@ -205,7 +210,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "commemorative portrait",
-    "note": "Толық марка; соғыс кезіндегі фотосурет емес."
+    "note": "Толық марка; соғыс кезіндегі фотосурет емес.",
+    "sha256": "baa99bc79722c909738282f112a2405ef87181cbb057cd63956a23d8bb05293b"
   },
   {
     "id": "khiuaz",
@@ -221,7 +227,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Commons public-domain белгілері бар. Автор мен бастапқы жарияланған күнді архивтік нақтылау әлі қажет; күн ойдан қосылған жоқ."
+    "note": "Commons public-domain белгілері бар. Автор мен бастапқы жарияланған күнді архивтік нақтылау әлі қажет; күн ойдан қосылған жоқ.",
+    "sha256": "fc1bf6acf2ce384991823c6b8b2458a5bd5da043cdbea21a8ba9b10004a3d54a"
   },
   {
     "id": "sagadat",
@@ -237,7 +244,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Соғыстан кейінгі фотосурет; Commons-тағы дайын қиынды өзгеріссіз."
+    "note": "Соғыстан кейінгі фотосурет; Commons-тағы дайын қиынды өзгеріссіз.",
+    "sha256": "7b82b58d3b57ff770620373deb6ca22b44fabb60f99469eaa91fdfc4df6091d8"
   },
   {
     "id": "rakhimzhan",
@@ -253,7 +261,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "commemorative portrait",
-    "note": "Толық марка. Қайта пайдалануға құқығы расталған жеке архивтік фотопортрет әзірге қосылған жоқ."
+    "note": "Толық марка. Қайта пайдалануға құқығы расталған жеке архивтік фотопортрет әзірге қосылған жоқ.",
+    "sha256": "ebe0e71a983395bfef1d4f90a869670b2344f87ab5fe26ddbcd2cb221e5d1741"
   },
   {
     "id": "panfilov",
@@ -269,7 +278,8 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "portrait photograph",
-    "note": "Commons дерегінде фотограф пен алғашқы жарияланым көрсетілген."
+    "note": "Commons дерегінде фотограф пен алғашқы жарияланым көрсетілген.",
+    "sha256": "239d3c1312eb8e2fa85b64725b50bb837c72dfddde235544b000783a72fafabe"
   },
   {
     "id": "tolegen",
@@ -285,6 +295,7 @@
     "checkedOn": "2026-11-04",
     "changes": "Original Commons file, including existing Commons crop where stated; no new crop, retouch or colorization",
     "kind": "museum portrait sculpture",
-    "note": "Бұл — портреттік мүсіннің фотосуреті; Төлегеннің тірі кезіндегі фотопортреті емес. Commons-тағы дайын қиынды."
+    "note": "Бұл — портреттік мүсіннің фотосуреті; Төлегеннің тірі кезіндегі фотопортреті емес. Commons-тағы дайын қиынды.",
+    "sha256": "52fd7035671bd5d83245c82a0623d2d4cb6edc84d31a3bd9ee95e2711019da87"
   }
 ]
