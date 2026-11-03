@@ -12,7 +12,8 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Unmodified full artifact; layout scales proportionally",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "4c526165b679a8d3210084b40aefd4180e3eaf060348053de8055c9ce4855f07"
   },
   {
     "id": "aliya",
@@ -27,7 +28,8 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Unmodified full artifact; layout scales proportionally",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "d0a55b4e31b81c690f8c89ee715fbd6daef584cf718812acfd26171a41761660"
   },
   {
     "id": "auezov",
@@ -42,7 +44,8 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Unmodified full artifact; layout scales proportionally",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "ae2169ae8a15be61b2680a5014c60216af60dceec3639f288abe3b0af8d5b37f"
   },
   {
     "id": "satbayev",
@@ -57,7 +60,8 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Unmodified full artifact; layout scales proportionally",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "e5c65eb826a340886c1ee9c1fafd8bc684b5e6622d72580aa631d466d49318c4"
   },
   {
     "id": "bekmakhanov",
@@ -72,6 +76,7 @@
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
     "checkedOn": "2026-11-03",
     "changes": "Unmodified full artifact; layout scales proportionally",
-    "kind": "commemorative portrait"
+    "kind": "commemorative portrait",
+    "sha256": "9d5bef33647902d078cd82fc34bb4a3c4712f945b4dd53198e8fd6444f8d6303"
   }
 ]
