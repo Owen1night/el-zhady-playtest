@@ -13,6 +13,19 @@ const engine=process.env.BROWSER==='webkit'?'webkit':'chromium';
 const browser=await (engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.CHROMIUM_EXECUTABLE_PATH}:existsSync('/usr/bin/chromium')?{executablePath:'/usr/bin/chromium'}:{}),args:['--no-sandbox']}));
 const evidenceSuffix=engine==='webkit'?'-webkit':'';
 const root='http://127.0.0.1:4180/el-zhady-playtest/';
+/** WebKit cannot capture a canvas over 32767px; keep every test, split only evidence. */
+async function capturePage(page:import('playwright').Page,path:string){
+ const height=await page.evaluate(()=>document.documentElement.scrollHeight);
+ if(height<=30000){await page.screenshot({path,fullPage:true});return;}
+ const viewport=page.viewportSize()!;
+ for(const [label,y] of [['top',0],['middle',Math.floor((height-viewport.height)/2)],['end',height-viewport.height]] as const){
+  await page.evaluate(top=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,top);},y);
+  await page.screenshot({path:label==='top'?path:path.replace('.png',`-${label}.png`)});
+ }
+ await page.evaluate(()=>{scrollTo(0,0);document.documentElement.style.removeProperty('scroll-behavior');});
+ console.log(`NOTE ${path}: ${height}px document captured as top/middle/end views below the WebKit canvas limit; assertions still inspect all content.`);
+}
+
 try {
  await mkdir('work/learning-browser',{recursive:true});
  for(const width of (process.env.REVIEW_WIDTHS||'360,390,768,1366,1920').split(',').map(Number)) {
@@ -53,6 +66,7 @@ try {
     assert.equal(await page.locator('[data-profile-group=context-profiles] .person-card').count(),2);
     for(const card of await page.locator('.person-card').all()){
      assert.equal(await card.locator(':scope>.archive-media').count(),1);
+     assert.equal(await card.locator('img').count(),1,'each person has a rendered portrait');
      assert(await card.locator('.person-copy h3').innerText());
      assert(await card.locator('.portrait-credit').innerText());
      assert(await card.evaluate(el=>el.querySelector('.portrait-credit')!.getBoundingClientRect().bottom<=el.getBoundingClientRect().bottom),'portrait credit stays inside card');
@@ -79,9 +93,10 @@ try {
    if(section==='heroes'&&width===360){await page.setViewportSize({width,height:1600});for(const card of await page.locator('.person-card').all()){const id=await card.getAttribute('data-person-id');await card.screenshot({path:`work/learning-browser/portrait-${id}-360${evidenceSuffix}.png`,animations:'disabled',style:'html{scroll-behavior:auto!important}.site-header,.skip-link{visibility:hidden!important}'});}await page.setViewportSize({width,height:800});}
    if(section==='heroes')await page.locator('.person-card').first().screenshot({path:`work/learning-browser/portrait-card-${width}${evidenceSuffix}.png`});
    for(const card of await page.locator('.reading-card,.timeline-event-copy').all())assert.equal(await card.locator('figure').count(),1,'each historical card has a sourced visual');
+   assert.equal(await page.locator('.media-missing').count(),0,'no failed local archive image is hidden behind a fallback');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} ${section}: no overflow`);
    if(['front','postwar','heroes','timeline','facts'].includes(section)){
-    await page.evaluate(()=>scrollTo(0,0));if(['front','heroes','facts'].includes(section))await page.screenshot({path:`work/learning-browser/${section}-top-${width}${evidenceSuffix}.png`});await page.screenshot({path:`work/learning-browser/${section}-${width}${evidenceSuffix}.png`,fullPage:true});
+    await page.evaluate(()=>scrollTo(0,0));if(['front','heroes','facts'].includes(section))await page.screenshot({path:`work/learning-browser/${section}-top-${width}${evidenceSuffix}.png`});await capturePage(page,`work/learning-browser/${section}-${width}${evidenceSuffix}.png`);
    }
   }
   await page.goto(root+'#/home');
