@@ -19,7 +19,7 @@ await vite.listen();
 const engine=process.env.BROWSER==='webkit'?'webkit':'chromium';
 const browser=await (engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.CHROMIUM_EXECUTABLE_PATH}:existsSync('/usr/bin/chromium')?{executablePath:'/usr/bin/chromium'}:{}),args:['--no-sandbox']}));
 const contexts:BrowserContext[]=[]; const errors:string[]=[];
-const tokens=new Map<string,string>(); const unreachable=new Set<string>();let loseSubmit=false;
+const tokens=new Map<string,string>(); const unreachable=new Set<string>();let loseSubmit=false;let rejectSave=false;
 const evidenceSuffix=engine==='webkit'?'-webkit':'';
 const root='http://127.0.0.1:4181/el-zhady-playtest/';
 async function session(uid:string,mobile=false) {
@@ -40,6 +40,7 @@ async function session(uid:string,mobile=false) {
         const allowed=['practice_begin','practice_state','practice_save','practice_submit','practice_reset','my_access','save_profile','admin_create_room','get_lobby','join_room','lobby_heartbeat','available_live_quizzes','configure_live_quiz','configure_competition','start_competition_round','reveal_competition_results','admin_delete_room','admin_competition_round_review','start_live_quiz','live_quiz_state','submit_live_quiz_answer','admin_live_quiz_review','end_live_question','cancel_live_quiz','admin_room_action','my_competition_history'];
         assert(allowed.includes(name));
         const names=(await h.query<{proargnames:string[]|null}>("select proargnames from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and proname=$1",[name])).rows[0].proargnames || [];
+        if(name==='practice_save'&&rejectSave){rejectSave=false;await route.fulfill({status:503,json:{message:'Test failed save before commit'}});return;}
         const body=request.postDataJSON()||{};const payload=await h.rpc(identity,name,names.map(n=>n==='p_answers'?JSON.stringify(body[n]):body[n]));
         if(name==='practice_submit'&&loseSubmit){loseSubmit=false;await route.fulfill({status:503,json:{message:'Test response lost after database commit'}});return;}
         await route.fulfill({json:payload??null});return;
@@ -86,7 +87,11 @@ try{
     const item=draft.items[i];
     if(kind==='map'){
      const option=page.locator(`[data-option-id="${item.correct}"]`);await option.focus();await page.keyboard.press('Enter');
-    }else await page.getByRole('button',{name:item.options.find(o=>o.id===item.correct)!.text,exact:true}).click();
+    }else{
+     if(kind==='quiz'&&i===0){rejectSave=true;await page.getByRole('button',{name:item.options.find(o=>o.id!==item.correct)!.text,exact:true}).click();}
+     const option=page.getByRole('button',{name:item.options.find(o=>o.id===item.correct)!.text,exact:true});await option.focus();await page.keyboard.press('Enter');
+     if(kind==='quiz'&&i===0){await page.locator('.service-error').waitFor();await page.getByRole('button',{name:'Қайта көру',exact:true}).click();}
+    }
     await saved(page);
     if(i===0){await page.reload();await saved(page);assert.equal(await page.locator(kind==='map'?`[data-option-id="${item.correct}"][aria-pressed=true]`:`.quiz-option[aria-pressed=true]`).count(),1);}
     await noOverflow(page,`${kind} at 360px`);

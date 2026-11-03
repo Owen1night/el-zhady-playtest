@@ -43,3 +43,5 @@
 @media(max-width:420px){.period-marker{font-size:11px;padding:12px 7px}.period-marker strong{font-size:15px}.period-marker .visible-marker{width:20px;height:20px}.archive-artifact{display:block}.person-copy{padding:20px}}
 
 .matched-achievement{display:block;font-weight:400;font-size:.8em;margin-top:8px}.portrait-credit{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;font-size:12px;overflow-wrap:anywhere}.portrait-credit a{text-decoration:underline}
+
+.header-actions>.presentation-button{width:auto;padding:8px 12px}.answer-verdict{font-weight:600;color:var(--red)}
