@@ -1,6 +1,6 @@
-import {ArchiveMedia,EventVisual} from './ArchiveMedia';
+import {ArchiveMedia,ArchiveCredit,EventVisual} from './ArchiveMedia';
 import { useState } from 'react';
-import { learningFacts, learningFigures, learningGroups, learningSources, learningTimeline } from '../data/learning';
+import { contextFigures, learningFacts, learningFigures, learningGroups, learningSources, learningTimeline } from '../data/learning';
 import type { SourceReference } from '../data/types';
 export function References({ refs }: { refs: readonly SourceReference[] }) {
   return <ul className="reading-sources">{refs.map(ref => { const source = learningSources.find(s => s.id === ref.sourceId)!; return <li key={`${ref.sourceId}:${ref.locator}`}><a href={source.url} target="_blank" rel="noreferrer">{source.publisher} · {source.title}</a><span>{ref.locator}</span></li>; })}</ul>;
@@ -8,8 +8,8 @@ export function References({ refs }: { refs: readonly SourceReference[] }) {
 export function LearningReadings({ section }: { section: string }) {
   const ids = learningGroups[section] || learningFacts.map(f => f.id);
   return <div className="learning-collection"><p className="editorial-status">Алғашқы дерекке негізделген оқу топтамасы · 03.11.2026. Мәтіндер дереккөздермен салыстырылды; академиялық және қазақша редакторлық рецензия әлі қажет.</p>
-    {section === 'heroes' && <div className="people-grid">{learningFigures.map(p => <article className="outline-panel person-card" key={p.id}><ArchiveMedia id={p.id}/><div className="person-copy"><span className="eyebrow">{p.role === 'hero' ? 'ҚЫСҚАША ТАНЫСТЫРУ · МАЙДАН' : 'ҚЫСҚАША ТАНЫСТЫРУ · ҒЫЛЫМ ЖӘНЕ ҚОҒАМ'}</span><h2>{p.name}</h2><p>{p.biography}</p><References refs={p.sourceRefs} /></div></article>)}</div>}
-    {section === 'heroes' && <div className="people-grid">{[{id:'abai',name:'Абай Құнанбайұлы',text:'Әуезовтің очеркінде қарастырылатын тұлға.'},{id:'stalin',name:'Иосиф Сталин',text:'КСРО басшысы. Оның 1953 жылы қайтыс болуы осы топтамадағы кезең шегімен байланысты.'}].map(p=><article className="outline-panel person-card" key={p.id}><ArchiveMedia id={p.id}/><div className="person-copy"><span className="eyebrow">ҚЫСҚАША ТАНЫСТЫРУ · ТАРИХИ КОНТЕКСТ</span><h2>{p.name}</h2><p>{p.text}</p><References refs={[{sourceId:'culture',locator:'Әуезовтің Абай туралы очеркі; Сталиннің қайтыс болуы'}]}/></div></article>)}</div>}
+    {section === 'heroes' && <div className="people-grid">{learningFigures.map(p => <article className="outline-panel person-card" key={p.id}><ArchiveMedia id={p.id} credit={false}/><div className="person-copy"><span className="eyebrow">{p.role === 'hero' ? 'ҚЫСҚАША ТАНЫСТЫРУ · МАЙДАН' : 'ҚЫСҚАША ТАНЫСТЫРУ · ҒЫЛЫМ ЖӘНЕ ҚОҒАМ'}</span><h2>{p.name}</h2><p>{p.biography}</p><References refs={p.sourceRefs} /><div className="portrait-credit"><ArchiveCredit id={p.id}/></div></div></article>)}</div>}
+    {section === 'heroes' && <div className="people-grid">{contextFigures.map(p=><article className="outline-panel person-card" key={p.id}><ArchiveMedia id={p.id} credit={false}/><div className="person-copy"><span className="eyebrow">ҚЫСҚАША ТАНЫСТЫРУ · ТАРИХИ КОНТЕКСТ</span><h2>{p.name}</h2><p>{p.biography}</p><References refs={p.sourceRefs}/><div className="portrait-credit"><ArchiveCredit id={p.id}/></div></div></article>)}</div>}
     <div className="reading-grid">{ids.map((id,i) => { const f = learningFacts.find(f => f.id === id)!; return <article className="reading-card" id={f.id} key={id}><span className="archive-stamp">{String(i+1).padStart(2,'0')} / {f.period === 'postwar' ? '1946–1953' : '1939–1945'}</span><EventVisual id={f.id} title={f.title} refs={f.sourceRefs}/><h2>{f.title}</h2><p>{f.text}</p><References refs={f.sourceRefs} /></article>; })}</div>
     {(section === 'heroes' || section === 'front') && <div className="archive-artifact"><ArchiveMedia id="manshuk"/></div>}
   </div>;

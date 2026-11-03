@@ -45,3 +45,8 @@ export const learningGroups: Record<string,string[]> = {
   front: ['war-periods','front-women','victory-context'], heroes: ['front-women','history-books','academy-1946','persecution-1952'],
   homefront: ['rear-oral','rear-care','cinema-almaty'], postwar: ['recovery-plan','academy-1946','history-books','persecution-1952','semey-1949','literature-1945','culture-1953'],
 };
+
+export const contextFigures: HistoricalFigure[] = [
+ {id:'abai',name:'Абай Құнанбайұлы',role:'context',biography:'Қысқаша таныстыру: Әуезовтің очеркінде қарастырылатын тұлға.',...sourced('culture','Әуезовтің 1945 жылғы Абай туралы очеркі')},
+ {id:'stalin',name:'Иосиф Сталин',role:'context',biography:'Қысқаша таныстыру: КСРО басшысы. Оның 1953 жылы қайтыс болуы осы топтамадағы кезең шегімен байланысты.',...sourced('culture','Сталиннің 1953 жылы қайтыс болуы туралы абзац')}
+];

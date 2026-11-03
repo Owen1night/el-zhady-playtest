@@ -10,7 +10,7 @@ export type Period = 'context' | 'war' | 'postwar';
 export type Category = 'front' | 'homefront' | 'postwar';
 export type Thesis = Sourced<{ id: string; title: string; text: string; factIds: string[] }>;
 export type HistoricalFact = Sourced<{ id: string; title: string; text: string; period: Period; figureIds: string[] }>;
-export type HistoricalFigure = Sourced<{ id: string; name: string; role: 'hero' | 'postwar'; biography: string; imageId?: string }>;
+export type HistoricalFigure = Sourced<{ id: string; name: string; role: 'hero' | 'postwar' | 'context'; biography: string; imageId?: string }>;
 export type TimelineEvent = Sourced<{ id: string; date: string; title: string; description: string; period: Period }>;
 export type Source = {
   id: string; title: string; author: string; publisher: string; publicationDate: string;

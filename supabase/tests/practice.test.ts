@@ -42,6 +42,6 @@ test('solo practice: five real loops, authoritative grading, private persistence
  await h.rpc(a.player,'practice_reset');
  assert.equal((await h.query('select * from public.practice_results where user_id=$1',[a.player])).rows.length,0);
  assert.equal((await h.query('select * from public.practice_results where user_id=$1',[a.outsider])).rows.length,1);
- assert.equal((await h.query('select count(*) n from public.live_quiz_results')).rows[0].n,0);
+ assert.equal((await h.query('select count(*)::int n from public.live_quiz_results')).rows[0].n,0);
  }finally{await h.close();}
 });
