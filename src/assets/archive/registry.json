@@ -78,5 +78,35 @@
     "changes": "Unmodified full artifact; layout scales proportionally",
     "kind": "commemorative portrait",
     "sha256": "9d5bef33647902d078cd82fc34bb4a3c4712f945b4dd53198e8fd6444f8d6303"
+  },
+  {
+    "id": "abai",
+    "file": "abai.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Stamp_of_Kazakhstan_083.jpg",
+    "record": "https://commons.wikimedia.org/wiki/File:Stamp_of_Kazakhstan_083.jpg",
+    "creator": "Post of Kazakhstan",
+    "date": "1995",
+    "caption": "Абайдың 1995 жылғы маркадағы портреті.",
+    "alt": "Абайдың 1995 жылғы маркадағы портреті.",
+    "license": "PD-KZ-exempt",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-KZ-exempt",
+    "checkedOn": "2026-11-03",
+    "changes": "Full Commons artifact; existing Commons crop for Stalin, no further crop",
+    "kind": "commemorative portrait"
+  },
+  {
+    "id": "stalin",
+    "file": "stalin.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Stalin_in_1943.png",
+    "record": "https://commons.wikimedia.org/wiki/File:Stalin_in_1943.png",
+    "creator": "United States Army 12th Air Force; Library of Congress cph.3b38287",
+    "date": "1943-12",
+    "caption": "Иосиф Сталин, Тегеран конференциясы, 1943 жыл.",
+    "alt": "Иосиф Сталин, Тегеран конференциясы, 1943 жыл.",
+    "license": "PD-USGov-Military-Army",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army",
+    "checkedOn": "2026-11-03",
+    "changes": "Full Commons artifact; existing Commons crop for Stalin, no further crop",
+    "kind": "portrait photograph"
   }
 ]
