@@ -12,10 +12,14 @@ Prepared bootstrap copied to this repository: `78909c2863a997637d6e6484f69a9bdea
 - The copied commit was verified through GitHub's branch API. No Actions runs or deployments were created by that push.
 - The existing kit's repository/backend guards, storage namespaces and transformed fixture build previously passed CI. They do not establish hosted Auth, database, scheduler or device acceptance.
 
+## Owner-reported configuration
+
+The owner reports selecting **GitHub Actions** as the Pages source in this test repository. This is recorded as owner-reported, not independently verified administration state. No deployment has run; branch/API checks still show no Actions runs.
+
 ## Current owner-only step
 
-Open https://github.com/Owen1night/el-zhady-playtest/settings/pages . Under **Build and deployment → Source**, choose **GitHub Actions**. If GitHub offers a starter workflow, do not create it; the isolated workflow is already present. No workflow should be run yet.
+Create a **new empty Supabase project** named `el-zhady-playtest` in the owner's existing Free organization via https://supabase.com/dashboard → **New project**. Keep its generated database password private. Choose a nearby region, then **Create new project** and wait for provisioning. If the Free plan has no available project slot, stop and report the quota message rather than upgrading, deleting or pausing production.
 
-The configured CLI could not read/manage Pages settings (`Forbidden`), and the connected GitHub tools do not expose Pages administration. The owner must set this value and report it; it has not been independently verified.
+Send only the new project's dashboard URL or public project reference after creation. Do not run SQL or change Auth/Cron yet. This session has no configured Supabase connection or project-management credentials; project creation requires the owner's account. The new project must be separate from production, with no production data copied.
 
-A fresh isolated Supabase project, Auth, test-only migrations/Cron, test build variables and deployment are still pending. No SQL has been executed by this setup work. Continue [the guide](README.md) one owner action at a time; production must remain unchanged.
+Test-project migrations, Auth, Cron, public build variables and deployment remain pending. No SQL has been executed by this setup work. Continue [the guide](README.md) one owner action at a time; production must remain unchanged.
