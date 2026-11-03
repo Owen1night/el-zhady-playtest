@@ -1,0 +1,28 @@
+name: Collect reviewed Topic 8 media
+on:
+  pull_request:
+    branches: [main]
+    paths: ['src/assets/archive/registry.json', '.github/workflows/reviewed-media.yml']
+permissions:
+  contents: write
+jobs:
+  assets:
+    if: github.repository == 'Owen1night/el-zhady-playtest' && github.head_ref == 'codex/solo-practice-and-archive-media' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-reviewed-media.mjs
+      - name: Preserve reviewed media on draft branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/assets/archive
+          if ! git diff --cached --quiet; then
+            git commit -m 'Bundle reviewed Topic 8 portrait originals'
+            git push origin HEAD:codex/solo-practice-and-archive-media
+          fi
