@@ -1,3 +1,58 @@
+# Ел жады — isolated Topic 8 review
+
+Draft [PR #1](https://github.com/Owen1night/el-zhady-playtest/pull/1), branch `codex/solo-practice-and-archive-media`, continues from owner-reported deployed playtest `108dbf5`. **New Topic 8 content is not merged or deployed.** Production, hosted databases, Cron and Room A are unchanged.
+
+- [10 theses, 30 distinct facts, 11 wartime profiles and source ledger](TOPIC8_CONTENT.md)
+- [18 media originals, reuse rights and portrait gaps](ARCHIVE_MEDIA.md)
+- [Actual browser/test evidence and screenshots](REVIEW_VERIFICATION.md)
+- [Architecture](PROJECT_SPEC.md), [requirements](REQUIREMENTS.md), [authoring rules](CONTENT_GUIDE.md)
+
+## Local development and preview
+
+Node 22+ and npm, in a separate checkout:
+
+```bash
+git clone --branch codex/solo-practice-and-archive-media https://github.com/Owen1night/el-zhady-playtest.git
+cd el-zhady-playtest
+npm ci
+npm run dev -- --port 5173
+```
+
+Public content works without Supabase configuration. Do not configure production credentials. Exact static preview:
+
+```bash
+npm run build
+npm run preview -- --port 4173
+```
+
+Open the local URL printed by Vite, then `#/facts`, `#/heroes`, `#/timeline` or `#/videos`. This is local QA, not a newly published public preview. The three supplied YouTube watch links plus a sourced 1946 postwar selection are connected. Players load only after a click, without autoplay, with permanent YouTube fallback links. Алаш is labelled background context. Watch-page titles were checked; full playback, embedding permissions and captions remain unverified. See [video verification](VIDEO_VERIFICATION.md) and [exact later manual deployment steps](PLAYTEST_DEPLOYMENT.md).
+
+```bash
+npm run check
+npm test
+npm run check:media
+npm run check:mixed-content
+npm run check:solo-content
+npm run build
+npm run test:learning:browser
+npm run test:practice:browser
+npm run test:videos:browser
+```
+
+Browser scripts use local disposable fixtures; `BROWSER=webkit` selects WebKit when installed. For independent-connection races use a disposable PostgreSQL 17 service on loopback port 55433 with `LIVE_QUIZ_TEST_DATABASE_URL=postgresql://postgres@127.0.0.1:55433/postgres`; never pass a hosted connection URL. Fixtures create/drop only their temporary local databases. No lint script exists.
+
+## Later deployment — separately approved only
+
+Topic 8 adds no SQL migration or Cron requirement. The existing solo-practice setup remains documented in [PRACTICE_SETUP.md](PRACTICE_SETUP.md); this update does not infer whether any hosted migration was applied. Keep backend setup actions separate from content review.
+
+Only the isolated repo's manual **Deploy isolated playtest** (`.github/workflows/pages.yml`) workflow applies after owner approval. Select the reviewed branch under Actions → Deploy isolated playtest → Run workflow; existing public Actions variables must identify `isufimcphbxhkmrquocc` and `https://owen1night.github.io/el-zhady-playtest/`. Never copy production backend configuration. A merge is not needed for that manual branch deployment. After approval, verify the workflow/deployment SHA, HTTPS site and its built assets before calling it published. **Do not run that workflow during this review.**
+
+## Previous implementation notes
+
+The expandable history below preserves earlier stage decisions. Its old “not deployed”, empty collections and pending setup statements describe those dates, not the current Topic 8 implementation.
+
+<details><summary>Historical stage documentation (superseded by current status above)</summary>
+
 # Isolated PR #6 playtest — setup in progress
 
 This is **Owen1night/el-zhady-playtest**, the disposable laptop/iPhone test repository. No playable site is deployed yet. Application code and migrations are pinned to PR #6 commit `465574fcc86f44b9d166c998c28a2e0d00a73b25`; the isolated setup kit was copied from `78909c2863a997637d6e6484f69a9bdea17c62c3`.
@@ -98,3 +153,5 @@ Vite relative `base: './'`, bundled Kazakh fonts and hash routes preserve `/el-z
 Registered history and named guest archives use internal identity snapshots, never name matches. Deleting a closed room preserves completed earned history, profiles, Auth and practice; unfinished cancelled rounds do not become completed rankings. Quiz-only totals sum correct counts/speed on the same scale, separate from practice /100. Mixed games remain unavailable until normalization/weight/speed/tie decisions are reviewed. Question draws may overlap other rounds; private API projections do not make public seed SQL cheat-proof.
 
 The owner reports physical iPhone full-quiz/late-join/final-refresh success. Mid-question Safari answer recovery and host-tab-closed continued play remain physical checks. Preferences/reset remain cosmetic; server persistence never depends on unload. Motion supports reduced motion and no automatic audio.
+
+</details>

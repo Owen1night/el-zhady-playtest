@@ -1,3 +1,11 @@
+# Current Topic 8 review note — 2026-11-04
+
+The owner now identifies playtest revision `108dbf5` as deployed. This update continues on draft PR #1; its new Topic 8 changes are not deployed. No hosted SQL/Auth/Cron verification or changes were performed in this task. Do not infer additional migration application from a deployed frontend. The recorded seven manual migrations below remain historical owner reports; never rerun them. Production and Room A are unchanged.
+
+The remaining earlier status is historical and superseded where the owner has subsequently completed a step. See ../PRACTICE_SETUP.md for the separate solo-practice setup contract and ../TOPIC8_CONTENT.md for the content-only revision, which needs no new migration.
+
+---
+
 # Isolated playtest — backend setup reported complete, frontend pending
 
 Test repository: `Owen1night/el-zhady-playtest`.

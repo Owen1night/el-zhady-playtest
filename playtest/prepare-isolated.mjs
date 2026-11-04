@@ -32,8 +32,6 @@ export async function prepare(root,env) {
  ['scripts/pages-health.mjs',"const published = 'https://owen1night.github.io/el-zhady/';","const published = '"+s.site+"';"],
  ];
  for(const [file,from,to] of patches){const path=join(root,file);const data=await readFile(path,'utf8');assert(data.includes(from),'Expected pinned source text missing: '+file);await writeFile(path,data.replaceAll(from,to));}
- const index=join(root,'index.html');const html=await readFile(index,'utf8');assert(html.includes('<body>'),'Expected body');
- await writeFile(index,html.replace('<body>','<body><aside style="padding:12px;background:#ffedb5;color:#342a10;text-align:center;font:600 14px sans-serif">ISOLATED PLAYTEST · '+s.repo+' · Supabase '+s.ref+'</aside>'));
  const lines=['VITE_PUBLIC_SITE_URL='+s.site,'PUBLIC_SITE_URL='+s.site,'VITE_SUPABASE_URL='+s.backend,'VITE_SUPABASE_PUBLISHABLE_KEY='+s.key,'VITE_TURNSTILE_SITE_KEY='+s.captcha].join('\n')+'\n';
  if(env.GITHUB_ENV)await appendFile(env.GITHUB_ENV,lines);
  return s;

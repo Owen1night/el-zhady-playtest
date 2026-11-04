@@ -31,23 +31,29 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm run check:mixed-content
-      - name: Validate public deployment configuration and build
+      - run: npm run check:solo-content
+      - name: Verify reviewed assets and build an offline review fixture
         run: |
-          npm run check:deploy
+          node scripts/fetch-reviewed-media.mjs --check
+          node playtest/prepare-isolated.mjs --self-test
           npm run build
           node --check scripts/pages-health.mjs
-          node scripts/pages-health.mjs create
         env:
-          VITE_PUBLIC_SITE_URL: ${{ vars.VITE_PUBLIC_SITE_URL }}
-          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-          VITE_TURNSTILE_SITE_KEY: ${{ vars.VITE_TURNSTILE_SITE_KEY }}
-      - name: Install Chromium for interaction checks
-        run: npx playwright install --with-deps chromium
+          VITE_PUBLIC_SITE_URL: https://owen1night.github.io/el-zhady-playtest/
+          VITE_SUPABASE_URL: https://tttttttttttttttttttt.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_review_fixture_only
+          VITE_TURNSTILE_SITE_KEY: ''
+      - name: Install Chromium and WebKit for interaction checks
+        run: npx playwright install --with-deps chromium webkit
       - name: Check mixed games and reading layouts
         run: |
           npm run test:mixed:browser
           npm run test:learning:browser
+          npm run test:practice:browser
+          npm run test:videos:browser
+          BROWSER=webkit npm run test:learning:browser
+          BROWSER=webkit npm run test:practice:browser
+          BROWSER=webkit npm run test:videos:browser
       - name: Save review screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,5 +62,7 @@ jobs:
           path: |
             work/mixed-browser/*.png
             work/learning-browser/*.png
+            work/practice-browser/*.png
+            work/videos-browser/*.png
           if-no-files-found: ignore
           retention-days: 7

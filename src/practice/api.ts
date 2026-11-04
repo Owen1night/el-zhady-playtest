@@ -1,0 +1,5 @@
+import {rpc} from '../backend/api';
+import type {ActivityType} from '../data/types';
+export type PracticeItem={id:string;prompt:string;options:{id:string;text:string}[];payload?:{locations:{id:string;text:string;lat:number;lon:number}[]};correct?:string;explanation?:string;sources?:{title:string;url:string;locator:string}[]};
+export type PracticeAttempt={id:string;activity_id:ActivityType;version:string;items:PracticeItem[];answers:Record<string,string|string[]>;score:number|null;max_score:20;completed_at:string|null};
+export const practiceApi={begin:(kind:ActivityType,request:string)=>rpc<PracticeAttempt>('practice_begin',{p_activity_id:kind,p_request_id:request}),state:(id:string)=>rpc<PracticeAttempt>('practice_state',{p_attempt_id:id}),save:(id:string,answers:PracticeAttempt['answers'])=>rpc<PracticeAttempt>('practice_save',{p_attempt_id:id,p_answers:answers}),submit:(id:string,answers:PracticeAttempt['answers'])=>rpc<PracticeAttempt>('practice_submit',{p_attempt_id:id,p_answers:answers}),reset:()=>rpc<null>('practice_reset')};

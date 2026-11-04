@@ -1,7 +1,10 @@
+import {topic8Sources} from './topic8-sources';
+import {videoSources} from './videos';
+import {additionalWarHeroes} from './war-heroes';
 import type { HistoricalFact, HistoricalFigure, Source, TimelineEvent } from './types';
 const note = 'Дерекпен салыстырылған оқу мәтіні. Академиялық және қазақша редакторлық рецензия әлі қажет.';
 const sourced = (sourceId: string, locator: string) => ({ status: 'sourced' as const, checkedOn: '2026-11-03', editorialNote: note, sourceRefs: [{ sourceId, locator }] as const });
-export const learningSources: Source[] = [
+const originalLearningSources: Source[] = [
   { id: 'ushmm', title: 'World War II Dates and Timeline', publisher: 'United States Holocaust Memorial Museum', url: 'https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates', publicationDate: '2021-11-15', author: 'United States Holocaust Memorial Museum' },
   { id: 'west', title: 'Батыс қазақстандықтардың Ұлы Жеңіске қосқан үлесі', publisher: 'e-history.kz', url: 'https://e-history.kz/kz/amp/news/show/50000239', publicationDate: '2025-05-08', author: 'Бетте көрсетілген авторлық мәліметті қараңыз' },
   { id: 'academy', title: 'ҚР ҰҒА тарихы', publisher: 'Қазақстан Республикасының Ұлттық ғылым академиясы', url: 'https://qazscience.gov.kz/category/history-of-nas-rk', publicationDate: '', author: 'ҚР ҰҒА' },
@@ -11,13 +14,14 @@ export const learningSources: Source[] = [
   { id: 'ctbto', title: 'International Day against Nuclear Tests', publisher: 'CTBTO', url: 'https://www.ctbto.org/news-and-events/international-day-against-nuclear-tests', publicationDate: '', author: 'CTBTO' },
   { id: 'stamp', title: 'File:Manshuk Mametova stamp.jpg', publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Manshuk_Mametova_stamp.jpg', publicationDate: '', author: 'Post of Kazakhstan' },
 ].map(s => ({ ...s, status: 'checked', accessedOn: '2026-11-03', notes: 'Көрсетілген үзінділер осы күні ашылып салыстырылды; бүкіл басылым рецензияланды дегенді білдірмейді.' }));
+export const learningSources:Source[]=[...originalLearningSources,...topic8Sources,...videoSources];
 export const learningFacts: HistoricalFact[] = [
-  { id: 'war-periods', title: '1939 және 1941 — екі түрлі бастау', text: 'Екінші дүниежүзілік соғыс 1939 жылғы 1 қыркүйекте Германияның Польшаға басып кіруімен басталды. 1941 жылғы 22 маусымда Германия КСРО-ға шабуыл жасады. Қазақстан тарихында Ұлы Отан соғысы деп аталатын 1941–1945 кезеңі осы кең соғыстың бір бөлігі.', period: 'context', figureIds: [], ...sourced('ushmm','September 1, 1939; June 22, 1941; FAQ') },
+  { id: 'war-periods', title: '1939 және 1941 — екі түрлі бастау', text: 'Екінші дүниежүзілік соғыс 1939 жылғы 1 қыркүйекте Германияның Польшаға басып кіруімен басталды. 1941 жылғы 22 маусымда Германия КСРО-ға шабуыл жасады. Қазақстан тарихында Ұлы Отан соғысы деп аталатын 1941–1945 кезеңі осы кең соғыстың бір бөлігі.', period: 'context', figureIds: [], status:'sourced',checkedOn:'2026-11-04',editorialNote:note,sourceRefs:[{sourceId:'ushmm',locator:'September 1, 1939; June 22, 1941; FAQ'},{sourceId:'kz-archive-term',locator:'Кіріспе: 1941–1945 жылдардағы Ұлы Отан соғысы'}] },
   { id: 'front-women', title: 'Майдандағы әйелдер', text: 'Әлия Молдағұлова мерген, Мәншүк Мәметова пулеметші болды. Олардың жолын тек марапатпен шектемей, әскери мамандығы мен адам тағдыры арқылы да тану маңызды.', period: 'war', figureIds: ['aliya','manshuk'], ...sourced('west','Әлия мен Мәншүктің әскери мамандықтары аталған абзац') },
   { id: 'rear-oral', title: 'Эвакуация: Оралдағы өндіріс', text: '1941 жылы Ленинградтан Оралға №231 зауыттың мамандары мен жабдықтары жеткізілді. Қоныс аударған өндірісті орналастыру жергілікті еңбек пен соғыс қажетінің байланысын көрсетеді.', period: 'war', figureIds: [], ...sourced('west','1941 жылғы 10–11 қыркүйек және №231 зауыт туралы абзацтар') },
   { id: 'rear-care', title: 'Тылдағы өзара көмек', text: 'Майданға азық-түлік пен киім жіберілді. Батыс Қазақстанда көшіп келген балаларға қамқорлық жасалып, балалар санаторийлері мен балабақша топтары ұйымдастырылды. Тыл тарихы — өндіріс қана емес, күнделікті қамқорлық тарихы.', period: 'war', figureIds: [], ...sourced('west','Майданға көмек және балаларды орналастыру туралы абзацтар') },
   { id: 'cinema-almaty', title: 'Алматы — соғыс кезіндегі кино орталығы', text: '1941–1944 жылдары Алматыда Орталық біріккен киностудия жұмыс істеді. Оның құрамына жергілікті студия және эвакуацияланған «Мосфильм» мен «Ленфильм» кірді. Өнер адамдары соғыс жағдайында да фильмдер жасады.', period: 'war', figureIds: [], ...sourced('cinema','Алғашқы екі абзац: 1941–1944 және студия құрамы') },
-  { id: 'victory-context', title: 'Мамыр мен қыркүйекті ажырату', text: 'Еуропада соғыс 1945 жылғы мамырда аяқталды. Қазақстанда Жеңіс күні 9 мамырда аталады. Дүниежүзілік соғыстың аяқталуы Жапонияның 1945 жылғы 2 қыркүйектегі тізе бүгуімен байланысты.', period: 'war', figureIds: [], ...sourced('ushmm','FAQ: end in Europe, Soviet Victory Day, Pacific Theater') },
+  { id: 'victory-context', title: 'Мамыр мен қыркүйекті ажырату', text: 'Еуропада соғыс 1945 жылғы мамырда аяқталды. Қазақстанда Жеңіс күні 9 мамырда аталады. Дүниежүзілік соғыстың аяқталуы Жапонияның 1945 жылғы 2 қыркүйектегі тізе бүгуімен байланысты.', period: 'war', figureIds: [], status:'sourced',checkedOn:'2026-11-04',editorialNote:note,sourceRefs:[{sourceId:'ushmm',locator:'FAQ: end in Europe; Pacific Theater'},{sourceId:'kz-victory-day',locator:'Мемлекеттік мерекелер: 9 мамыр — Жеңіс күні'}] },
   { id: 'recovery-plan', title: 'Қалпына келтіру және еңбек', text: '1946 жылғы наурызда 1946–1950 жылдарға арналған қалпына келтіру және даму жоспары қабылданды. Қазақстан басқа өңірлерді қалпына келтіру базаларының бірі болды. Ауыр өнеркәсіпке басымдық берілгенімен, ауыл мен тұтыну тауарлары саласында қиындықтар сақталды.', period: 'postwar', figureIds: [], ...sourced('recovery','Өнеркәсіп жөніндегі бөлім: 1946 жылғы 18 наурыз; ауыл мен тұтыну тауарлары абзацтары') },
   { id: 'academy-1946', title: 'Ғылымның жаңа орталығы', text: 'Қазақ КСР Ғылым академиясы 1946 жылғы 1 маусымда құрылды. Тұңғыш президенті Қаныш Сәтбаев болды. Академияның ресми тарихында осы күн арнайы көрсетілген.', period: 'postwar', figureIds: ['satbayev'], ...sourced('academy','1946 бөлімі: құрылған күн мен тұңғыш президент') },
   { id: 'history-books', title: 'Кітап және тарихи пікірталас', text: 'Қазақ КСР тарихының ұжымдық басылымы 1943 жылы шықты. Ермұхан Бекмахановтың 1947 жылғы «Қазақстан XIX ғасырдың 20–40 жылдарында» еңбегі кейін идеологиялық айыптауға ұшырады. Кітаптың жарияланған жылы мен зерттеген дәуірін шатастырмаңыз.', period: 'postwar', figureIds: ['bekmakhanov'], ...sourced('culture','1943 жылғы ұжымдық тарих және 1947 жылғы монография абзацтары') },
@@ -28,20 +32,33 @@ export const learningFacts: HistoricalFact[] = [
 ];
 export const learningFigures: HistoricalFigure[] = [
   { id: 'auezov', name: 'Мұхтар Әуезов', role: 'postwar', biography: 'Жазушы. Абай туралы еңбегі идеологиялық сынға ұшырап, саяси қысым көрді.', ...sourced('culture','М. Әуезовтің 1945 жылғы еңбегі және қудалануы') },
-  { id: 'aliya', name: 'Әлия Молдағұлова', role: 'hero', biography: 'Мерген. Оның майдан жолы әйелдердің соғысқа қатысуын жеке тұлға арқылы түсінуге мүмкіндік береді.', ...sourced('west','54-ші атқыштар бригадасының мергені аталған абзац') },
-  { id: 'manshuk', name: 'Мәншүк Мәметова', role: 'hero', biography: 'Пулеметші. Кейінгі еске алу нысандарын соғыс кезіндегі құжаттардан ажырата оқу қажет.', imageId: 'manshuk-stamp', ...sourced('west','100-ші ұлттық атқыштар бригадасының пулеметшісі аталған абзац') },
+  { id: 'aliya', name: 'Әлия Молдағұлова', role: 'hero', imageId:'aliya-photo', biography: '54-атқыштар бригадасында мерген болып қызмет етті. Оның майдан жолы әйелдердің соғысқа қатысуын әскери мамандық пен жеке тағдыр арқылы тануға мүмкіндік береді. Жоғарыда естелік марка емес, дереккөзде Әлия деп анықталған фотопортрет берілген.', ...sourced('west','54-ші атқыштар бригадасының мергені аталған абзац') },
+  { id: 'manshuk', name: 'Мәншүк Мәметова', role: 'hero', biography: '100-ұлттық атқыштар бригадасының пулеметшісі. Оның әскери мамандығы майдандағы жаяу әскердің от қолдауымен байланысты болды. Профильдегі 1937 жылғы фотопортрет пен төмендегі 1995 жылғы естелік марка — әр кезеңнің екі бөлек дерегі.', imageId: 'manshuk-photo', ...sourced('west','100-ші ұлттық атқыштар бригадасының пулеметшісі аталған абзац') },
   { id: 'satbayev', name: 'Қаныш Сәтбаев', role: 'postwar', biography: '1946 жылы құрылған Қазақ КСР Ғылым академиясының тұңғыш президенті.', ...sourced('academy','1946 бөлімі') },
   { id: 'bekmakhanov', name: 'Ермұхан Бекмаханов', role: 'postwar', biography: '1947 жылғы монографияның авторы. 1952 жылғы үкімі соғыстан кейінгі ғалымдарды қудалау тарихын ашады.', ...sourced('culture','1947 жылғы еңбек; 1952 жылғы үкім') },
+  ...additionalWarHeroes,
 ];
+/** Each timeline description covers its own event; the associated reading supplies its references. */
 export const learningTimeline: TimelineEvent[] = [
-  ['1939-09-01','Соғыстың басталуы','war-periods'], ['1941-06-22','КСРО-ға шабуыл','war-periods'],
-  ['1941-09-10','Оралға зауыт жабдықтары келді','rear-oral'], ['1943','Ұжымдық тарих басылымы','history-books'],
-  ['1945-05','Еуропадағы соғыстың аяқталуы','victory-context'], ['1945-09-02','Жапонияның тізе бүгуі','victory-context'],
-  ['1946-03','Қалпына келтіру жоспары','recovery-plan'], ['1946-06-01','Ғылым академиясы құрылды','academy-1946'],
-  ['1947','Бекмахановтың монографиясы','history-books'], ['1949-08-29','Семейдегі алғашқы ядролық сынақ','semey-1949'],
-  ['1952','Бекмахановқа үкім шығарылды','persecution-1952'], ['1953','Саяси өзгерістердің басталуы','culture-1953'],
-].map(([date,title,factId]) => { const fact = learningFacts.find(f => f.id === factId)!; return { ...fact, id: `event-${date}`, date, title, description: fact.text, period: date < '1941-06-22' ? 'context' : date < '1946' ? 'war' : 'postwar' }; });
+ ['1939-09-01','Соғыстың басталуы','war-periods','1939 жылғы 1 қыркүйекте Германия Польшаға басып кірді. Бұл күн Екінші дүниежүзілік соғыстың басталуын белгілейді.'],
+ ['1941-06-22','КСРО-ға шабуыл','war-periods','1941 жылғы 22 маусымда Германия КСРО-ға шабуыл жасады.'],
+ ['1941-09-10','Оралға зауыт жабдықтары келді','rear-oral','1941 жылғы қыркүйекте Ленинградтан Оралға №231 зауыттың мамандары мен жабдықтары жеткізілді.'],
+ ['1943','Ұжымдық тарих басылымы','history-books','1943 жылы Қазақ КСР тарихының ұжымдық басылымы жарық көрді.'],
+ ['1945-05','Еуропадағы соғыстың аяқталуы','victory-context','1945 жылғы мамырда Еуропада соғыс аяқталды.'],
+ ['1945-09-02','Жапонияның тізе бүгуі','victory-context','1945 жылғы 2 қыркүйекте Жапония тізе бүкті. Бұл оқиға Екінші дүниежүзілік соғыстың аяқталуымен байланысты.'],
+ ['1946-03','Қалпына келтіру жоспары','recovery-plan','1946 жылғы наурызда 1946–1950 жылдарға арналған қалпына келтіру және даму жоспары қабылданды.'],
+ ['1946-06-01','Ғылым академиясы құрылды','academy-1946','1946 жылғы 1 маусымда Қазақ КСР Ғылым академиясы құрылды. Оның тұңғыш президенті Қаныш Сәтбаев болды.'],
+ ['1947','Бекмахановтың монографиясы','history-books','1947 жылы Ермұхан Бекмахановтың «Қазақстан XIX ғасырдың 20–40 жылдарында» монографиясы жарық көрді.'],
+ ['1949-08-29','Семейдегі алғашқы ядролық сынақ','semey-1949','1949 жылғы 29 тамызда Семей полигонында алғашқы кеңестік ядролық сынақ жасалды.'],
+ ['1952','Бекмахановқа үкім шығарылды','persecution-1952','1952 жылы Ермұхан Бекмаханов 25 жылға сотталды. Нақты күнге қатысты деректердегі айырмашылыққа байланысты мұнда жыл ғана берілді.'],
+ ['1953','Саяси өзгерістердің басталуы','culture-1953','1953 жылы Сталин қайтыс болғаннан кейін қуғын-сүргін науқаны баяулады. Әкімшіл жүйе бірден жойылған жоқ.'],
+].map(([date,title,factId,description])=>{const fact=learningFacts.find(f=>f.id===factId)!;return {...fact,id:`event-${date}`,date,title,description,period:date<'1941-06-22'?'context':date<'1946'?'war':'postwar'};});
 export const learningGroups: Record<string,string[]> = {
   front: ['war-periods','front-women','victory-context'], heroes: ['front-women','history-books','academy-1946','persecution-1952'],
   homefront: ['rear-oral','rear-care','cinema-almaty'], postwar: ['recovery-plan','academy-1946','history-books','persecution-1952','semey-1949','literature-1945','culture-1953'],
 };
+
+export const contextFigures: HistoricalFigure[] = [
+ {id:'abai',name:'Абай Құнанбайұлы',role:'context',biography:'Қысқаша таныстыру: Әуезовтің очеркінде қарастырылатын тұлға.',...sourced('culture','Әуезовтің 1945 жылғы Абай туралы очеркі')},
+ {id:'stalin',name:'Иосиф Сталин',role:'context',biography:'Қысқаша таныстыру: КСРО басшысы. Оның 1953 жылы қайтыс болуы осы топтамадағы кезең шегімен байланысты.',...sourced('culture','Сталиннің 1953 жылы қайтыс болуы туралы абзац')}
+];

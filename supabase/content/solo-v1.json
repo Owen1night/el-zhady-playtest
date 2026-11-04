@@ -1,0 +1,403 @@
+{
+  "matching": [
+    {
+      "id": "auezov",
+      "prompt": "Мұхтар Әуезов",
+      "options": [
+        {
+          "id": "role-auezov",
+          "text": "Абай туралы 1945 жылғы очерктің авторы"
+        },
+        {
+          "id": "role-aliya",
+          "text": "Мерген"
+        },
+        {
+          "id": "role-manshuk",
+          "text": "Пулеметші"
+        },
+        {
+          "id": "role-satbayev",
+          "text": "Ғылым академиясының тұңғыш президенті"
+        },
+        {
+          "id": "role-bekmakhanov",
+          "text": "1947 жылғы тарихи монографияның авторы"
+        }
+      ],
+      "correct": "role-auezov",
+      "explanation": "Жазушы. Абай туралы еңбегі идеологиялық сынға ұшырап, саяси қысым көрді.",
+      "sources": [
+        {
+          "title": "Қоғамдық-саяси және мәдени өмірдегі өзгерістер",
+          "url": "https://e-history.kz/kz/amp/history-of-kazakhstan/show/8825",
+          "publisher": "e-history.kz",
+          "locator": "М. Әуезовтің 1945 жылғы еңбегі және қудалануы",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "aliya",
+      "prompt": "Әлия Молдағұлова",
+      "options": [
+        {
+          "id": "role-auezov",
+          "text": "Абай туралы 1945 жылғы очерктің авторы"
+        },
+        {
+          "id": "role-aliya",
+          "text": "Мерген"
+        },
+        {
+          "id": "role-manshuk",
+          "text": "Пулеметші"
+        },
+        {
+          "id": "role-satbayev",
+          "text": "Ғылым академиясының тұңғыш президенті"
+        },
+        {
+          "id": "role-bekmakhanov",
+          "text": "1947 жылғы тарихи монографияның авторы"
+        }
+      ],
+      "correct": "role-aliya",
+      "explanation": "Мерген. Оның майдан жолы әйелдердің соғысқа қатысуын жеке тұлға арқылы түсінуге мүмкіндік береді.",
+      "sources": [
+        {
+          "title": "Батыс қазақстандықтардың Ұлы Жеңіске қосқан үлесі",
+          "url": "https://e-history.kz/kz/amp/news/show/50000239",
+          "publisher": "e-history.kz",
+          "locator": "54-ші атқыштар бригадасының мергені аталған абзац",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "manshuk",
+      "prompt": "Мәншүк Мәметова",
+      "options": [
+        {
+          "id": "role-auezov",
+          "text": "Абай туралы 1945 жылғы очерктің авторы"
+        },
+        {
+          "id": "role-aliya",
+          "text": "Мерген"
+        },
+        {
+          "id": "role-manshuk",
+          "text": "Пулеметші"
+        },
+        {
+          "id": "role-satbayev",
+          "text": "Ғылым академиясының тұңғыш президенті"
+        },
+        {
+          "id": "role-bekmakhanov",
+          "text": "1947 жылғы тарихи монографияның авторы"
+        }
+      ],
+      "correct": "role-manshuk",
+      "explanation": "Пулеметші. Кейінгі еске алу нысандарын соғыс кезіндегі құжаттардан ажырата оқу қажет.",
+      "sources": [
+        {
+          "title": "Батыс қазақстандықтардың Ұлы Жеңіске қосқан үлесі",
+          "url": "https://e-history.kz/kz/amp/news/show/50000239",
+          "publisher": "e-history.kz",
+          "locator": "100-ші ұлттық атқыштар бригадасының пулеметшісі аталған абзац",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "satbayev",
+      "prompt": "Қаныш Сәтбаев",
+      "options": [
+        {
+          "id": "role-auezov",
+          "text": "Абай туралы 1945 жылғы очерктің авторы"
+        },
+        {
+          "id": "role-aliya",
+          "text": "Мерген"
+        },
+        {
+          "id": "role-manshuk",
+          "text": "Пулеметші"
+        },
+        {
+          "id": "role-satbayev",
+          "text": "Ғылым академиясының тұңғыш президенті"
+        },
+        {
+          "id": "role-bekmakhanov",
+          "text": "1947 жылғы тарихи монографияның авторы"
+        }
+      ],
+      "correct": "role-satbayev",
+      "explanation": "1946 жылы құрылған Қазақ КСР Ғылым академиясының тұңғыш президенті.",
+      "sources": [
+        {
+          "title": "ҚР ҰҒА тарихы",
+          "url": "https://qazscience.gov.kz/category/history-of-nas-rk",
+          "publisher": "Қазақстан Республикасының Ұлттық ғылым академиясы",
+          "locator": "1946 бөлімі",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "bekmakhanov",
+      "prompt": "Ермұхан Бекмаханов",
+      "options": [
+        {
+          "id": "role-auezov",
+          "text": "Абай туралы 1945 жылғы очерктің авторы"
+        },
+        {
+          "id": "role-aliya",
+          "text": "Мерген"
+        },
+        {
+          "id": "role-manshuk",
+          "text": "Пулеметші"
+        },
+        {
+          "id": "role-satbayev",
+          "text": "Ғылым академиясының тұңғыш президенті"
+        },
+        {
+          "id": "role-bekmakhanov",
+          "text": "1947 жылғы тарихи монографияның авторы"
+        }
+      ],
+      "correct": "role-bekmakhanov",
+      "explanation": "1947 жылғы монографияның авторы. 1952 жылғы үкімі соғыстан кейінгі ғалымдарды қудалау тарихын ашады.",
+      "sources": [
+        {
+          "title": "Қоғамдық-саяси және мәдени өмірдегі өзгерістер",
+          "url": "https://e-history.kz/kz/amp/history-of-kazakhstan/show/8825",
+          "publisher": "e-history.kz",
+          "locator": "1947 жылғы еңбек; 1952 жылғы үкім",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    }
+  ],
+  "ordering": [
+    {
+      "id": "sequence",
+      "prompt": "Оқиғаларды ертеден кешке реттеңіз.",
+      "options": [
+        {
+          "id": "event-1952",
+          "text": "Бекмахановқа үкім шығарылды"
+        },
+        {
+          "id": "event-1949-08-29",
+          "text": "Семейдегі алғашқы ядролық сынақ"
+        },
+        {
+          "id": "event-1946-06-01",
+          "text": "Ғылым академиясы құрылды"
+        },
+        {
+          "id": "event-1941-06-22",
+          "text": "КСРО-ға шабуыл"
+        },
+        {
+          "id": "event-1939-09-01",
+          "text": "Соғыстың басталуы"
+        }
+      ],
+      "correct": "event-1939-09-01>event-1941-06-22>event-1946-06-01>event-1949-08-29>event-1952",
+      "explanation": "1939-09-01: Соғыстың басталуы; 1941-06-22: КСРО-ға шабуыл; 1946-06-01: Ғылым академиясы құрылды; 1949-08-29: Семейдегі алғашқы ядролық сынақ; 1952: Бекмахановқа үкім шығарылды",
+      "sources": [
+        {
+          "title": "World War II Dates and Timeline",
+          "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates",
+          "publisher": "United States Holocaust Memorial Museum",
+          "locator": "September 1, 1939; June 22, 1941; FAQ",
+          "checked_on": "2026-11-03"
+        },
+        {
+          "title": "World War II Dates and Timeline",
+          "url": "https://encyclopedia.ushmm.org/content/en/article/world-war-ii-key-dates",
+          "publisher": "United States Holocaust Memorial Museum",
+          "locator": "September 1, 1939; June 22, 1941; FAQ",
+          "checked_on": "2026-11-03"
+        },
+        {
+          "title": "ҚР ҰҒА тарихы",
+          "url": "https://qazscience.gov.kz/category/history-of-nas-rk",
+          "publisher": "Қазақстан Республикасының Ұлттық ғылым академиясы",
+          "locator": "1946 бөлімі: құрылған күн мен тұңғыш президент",
+          "checked_on": "2026-11-03"
+        },
+        {
+          "title": "International Day against Nuclear Tests",
+          "url": "https://www.ctbto.org/news-and-events/international-day-against-nuclear-tests",
+          "publisher": "CTBTO",
+          "locator": "First Soviet nuclear test: 29 August 1949; harmful effects paragraph",
+          "checked_on": "2026-11-03"
+        },
+        {
+          "title": "Қоғамдық-саяси және мәдени өмірдегі өзгерістер",
+          "url": "https://e-history.kz/kz/amp/history-of-kazakhstan/show/8825",
+          "publisher": "e-history.kz",
+          "locator": "Бекмахановтың қызметтен босатылуы мен 1952 жылғы үкімі",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    }
+  ],
+  "classification": [
+    {
+      "id": "front-women",
+      "prompt": "Әлия Молдағұлова мерген, Мәншүк Мәметова пулеметші болды. Олардың жолын тек марапатпен шектемей, әскери мамандығы мен адам тағдыры арқылы да тану маңызды.",
+      "options": [
+        {
+          "id": "front",
+          "text": "Майдан"
+        },
+        {
+          "id": "homefront",
+          "text": "Тыл"
+        },
+        {
+          "id": "postwar",
+          "text": "Соғыстан кейін"
+        }
+      ],
+      "correct": "front",
+      "explanation": "Майдандағы әйелдер",
+      "sources": [
+        {
+          "title": "Батыс қазақстандықтардың Ұлы Жеңіске қосқан үлесі",
+          "url": "https://e-history.kz/kz/amp/news/show/50000239",
+          "publisher": "e-history.kz",
+          "locator": "Әлия мен Мәншүктің әскери мамандықтары аталған абзац",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "rear-oral",
+      "prompt": "1941 жылы Ленинградтан Оралға №231 зауыттың мамандары мен жабдықтары жеткізілді. Қоныс аударған өндірісті орналастыру жергілікті еңбек пен соғыс қажетінің байланысын көрсетеді.",
+      "options": [
+        {
+          "id": "front",
+          "text": "Майдан"
+        },
+        {
+          "id": "homefront",
+          "text": "Тыл"
+        },
+        {
+          "id": "postwar",
+          "text": "Соғыстан кейін"
+        }
+      ],
+      "correct": "homefront",
+      "explanation": "Эвакуация: Оралдағы өндіріс",
+      "sources": [
+        {
+          "title": "Батыс қазақстандықтардың Ұлы Жеңіске қосқан үлесі",
+          "url": "https://e-history.kz/kz/amp/news/show/50000239",
+          "publisher": "e-history.kz",
+          "locator": "1941 жылғы 10–11 қыркүйек және №231 зауыт туралы абзацтар",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "cinema-almaty",
+      "prompt": "1941–1944 жылдары Алматыда Орталық біріккен киностудия жұмыс істеді. Оның құрамына жергілікті студия және эвакуацияланған «Мосфильм» мен «Ленфильм» кірді. Өнер адамдары соғыс жағдайында да фильмдер жасады.",
+      "options": [
+        {
+          "id": "front",
+          "text": "Майдан"
+        },
+        {
+          "id": "homefront",
+          "text": "Тыл"
+        },
+        {
+          "id": "postwar",
+          "text": "Соғыстан кейін"
+        }
+      ],
+      "correct": "homefront",
+      "explanation": "Алматы — соғыс кезіндегі кино орталығы",
+      "sources": [
+        {
+          "title": "ЦОКС — Центральная Объединенная киностудия (1941–1944 гг.)",
+          "url": "https://csdfmuseum.ru/articles/418",
+          "publisher": "ЦСДФ мұражайы",
+          "locator": "Алғашқы екі абзац: 1941–1944 және студия құрамы",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "academy-1946",
+      "prompt": "Қазақ КСР Ғылым академиясы 1946 жылғы 1 маусымда құрылды. Тұңғыш президенті Қаныш Сәтбаев болды. Академияның ресми тарихында осы күн арнайы көрсетілген.",
+      "options": [
+        {
+          "id": "front",
+          "text": "Майдан"
+        },
+        {
+          "id": "homefront",
+          "text": "Тыл"
+        },
+        {
+          "id": "postwar",
+          "text": "Соғыстан кейін"
+        }
+      ],
+      "correct": "postwar",
+      "explanation": "Ғылымның жаңа орталығы",
+      "sources": [
+        {
+          "title": "ҚР ҰҒА тарихы",
+          "url": "https://qazscience.gov.kz/category/history-of-nas-rk",
+          "publisher": "Қазақстан Республикасының Ұлттық ғылым академиясы",
+          "locator": "1946 бөлімі: құрылған күн мен тұңғыш президент",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "id": "persecution-1952",
+      "prompt": "Бекмаханов 1952 жылы 25 жылға сотталды. Ғылыми тұжырымды әкімшілік айыппен жазалау зерттеу еркіндігін шектеді. Бұл жерде даулы нақты күн емес, деректердегі ортақ жыл беріледі.",
+      "options": [
+        {
+          "id": "front",
+          "text": "Майдан"
+        },
+        {
+          "id": "homefront",
+          "text": "Тыл"
+        },
+        {
+          "id": "postwar",
+          "text": "Соғыстан кейін"
+        }
+      ],
+      "correct": "postwar",
+      "explanation": "Ғалымды қудалау",
+      "sources": [
+        {
+          "title": "Қоғамдық-саяси және мәдени өмірдегі өзгерістер",
+          "url": "https://e-history.kz/kz/amp/history-of-kazakhstan/show/8825",
+          "publisher": "e-history.kz",
+          "locator": "Бекмахановтың қызметтен босатылуы мен 1952 жылғы үкімі",
+          "checked_on": "2026-11-03"
+        }
+      ]
+    }
+  ]
+}

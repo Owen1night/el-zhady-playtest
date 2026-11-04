@@ -50,3 +50,10 @@ On 2026-11-03 the owner authorised releasing PR #4 after checking current-head m
 - `20261103000400_mixed_bank_v3.sql`: new draft, isolated test databases only.
 
 No hosted application or Cron change is authorised/performed by this draft task. Do not rerun the five previously manually applied migrations or Cron setup. Later reviewed setup/release instructions: MIXED_SETUP.md. No remote migration history is inferred from local tests.
+
+
+## Isolated test-project update reported by owner / solo draft
+
+For **el-zhady-playtest (`isufimcphbxhkmrquocc`) only**, the owner reports all seven original migrations applied once manually, scheduler jobs configured/verified, anonymous Auth enabled and result-policy/Realtime checks supplied. These are owner-reported test setup, not assistant-hosted SQL access. Historical production status above must not be conflated with this isolated project. Do not rerun any of those seven files or Cron setup.
+
+`20261103000500_solo_practice.sql` is NEW and **not applied to either hosted project** by this task. It was executed only in disposable local/CI test databases. No existing migration file was modified; no live RPC or scheduler definition is replaced. See PRACTICE_SETUP.md for later owner-reviewed isolated application. Room A is untouched. No production mutation or deployment is authorised.
