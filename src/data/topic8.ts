@@ -53,9 +53,5 @@ export const rubricTheses:(Thesis&{number:number})[]=thesisContent.map(([title,t
  const items=rubricFacts.slice(i*3,i*3+3);const refs:SourceReference[]=items.flatMap(f=>f.sourceRefs);if(i===5)refs.push({sourceId:'kz-victory-day',locator:'Қазіргі Қазақстан күнтізбесіндегі 9 мамыр; бұл қазіргі еске алу контексі, қосымша тарихи факт ретінде саналмайды'});
  return {id:`thesis-${String(i+1).padStart(2,'0')}`,number:i+1,title,text,factIds:items.map(f=>f.id),status:'sourced',sourceRefs:refs as [SourceReference,...SourceReference[]],checkedOn:'2026-11-04',editorialNote:editorial};
 });
-export type VideoSlot={id:string;number:number;title:string;state:'awaiting-media';media:null;note:string};
-export const videoSlots:VideoSlot[]=[
- 'Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы',
- 'Алаш қозғалысы және қазақ зиялылары',
- 'Соғыс жылдарындағы Қазақстан мәдениеті',
-].map((title,i)=>({id:`video-${i+1}`,number:i+1,title,state:'awaiting-media',media:null,note:'Бейне URL-і немесе файлы жоба иесінен күтіледі. Автор, көрсету құқығы, қазақша субтитр және транскрипт сілтемемен бірге толықтырылады.'}));
+// Retain the existing catalogue export; player data now lives in its own typed collection.
+export {learningVideos as videoSlots} from './videos';

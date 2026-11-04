@@ -2,7 +2,7 @@
 
 Draft PR #1, continuing from 108dbf5; new content is not deployed. UI destinations after a later approved build: `#/facts`, `#/heroes`, `#/timeline`, `#/videos`. For now use the draft source and screenshot links; the already-published site still serves its earlier revision.
 
-**Actual counts:** 10 numbered theses, 30 distinct numbered claims, 11 wartime profiles, 3 postwar/cultural profiles and 2 context introductions. 13 broader readings and 12 timeline events are not additional rubric facts. Topic videos: 0/3 playable. Sources compared on 2026-11-04; no academic certification claimed.
+**Actual counts:** 10 numbered theses, 30 distinct numbered claims, 11 wartime profiles, 3 postwar/cultural profiles and 2 context introductions. 13 broader readings and 12 timeline events are not additional rubric facts. Topic videos: four YouTube watch links, three core-topic and one background; actual playback is not independently verified. Sources compared on 2026-11-04; no academic certification claimed.
 
 ## Ten main theses
 
@@ -455,13 +455,14 @@ ID: `fact-30`; claim: `stalin-death-1953`.
 
 - [e-history.kz — Қоғамдық-саяси және мәдени өмірдегі өзгерістер](https://e-history.kz/kz/amp/history-of-kazakhstan/show/8825): Сталиннің 1953 жылы қайтыс болуы туралы абзац
 
-## Owner video media pending
+## Owner-supplied YouTube videos
 
-1. Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы
-2. Алаш қозғалысы және қазақ зиялылары
-3. Соғыс жылдарындағы Қазақстан мәдениеті
+1. [Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы](https://www.youtube.com/watch?v=U_m3AiohJNI) — core topic.
+2. [Алаш қозғалысы және қазақ зиялылары](https://www.youtube.com/watch?v=8VoqgIjK-qw) — background; original title «АЛАШ туралы 5 минут: олар не үшін күресті?».
+3. [Соғыс жылдарындағы Қазақстан мәдениеті](https://www.youtube.com/watch?v=xavwUCL0OkU) — core topic; original title includes 1941–1945.
+4. [Соғыстан кейінгі Қазақстан: 1946 жыл](https://www.youtube.com/watch?v=0xW-wV9tGDI) — core postwar topic; [Qazaqstan tarihy programme/source](https://e-history.kz/kz/video/show/34042), 2024-06-28, Қазақстан Тарихы channel.
 
-No URLs/files supplied; no player or fabricated link rendered. AI teacher and street interviews are separate.
+The three supplied watch pages opened with matching titles on 2026-11-04; a fourth, «1946 жыл | “Тарих толқынында”», was sourced from the Qazaqstan tarihy programme page and its matching YouTube channel entry. Official click-to-load players and permanent fallback links are implemented. No full playback/transcript review or embeddability permission is claimed from that URL/title check. Алаш remains contextual and is excluded from the three core selections. The added postwar programme supplies the third directly relevant selection, not a claim of verified full playback. See VIDEO_VERIFICATION.md. AI teacher and street interviews remain separate.
 
 ## Editorial concerns retained
 

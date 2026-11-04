@@ -8,7 +8,7 @@ Continuing from owner-reported deployed playtest `108dbf5`, on the same draft PR
 - 11 wartime profiles, 3 postwar/cultural profiles, 2 context introductions; main desktop/mobile access and home shortcuts. All 16 image-first cards inspected at 360px, including the existing portraits. Photographs, modern photos, stamps, coin relief and museum bust are identified separately.
 - 18 local original files pass SHA-256/signature checks. Мәншүк/Әлия now use identified photos; the original 1995 Мәншүк stamp is separately captioned and byte-identical. [Exact rights/remaining portrait gaps](ARCHIVE_MEDIA.md).
 - All text-source and media-record links were examined with the web tool; Natural Earth terms independently opened. Local images/alt text and source-reference links are checked separately in the browser. HTTP availability does not establish historical truth or future availability.
-- Exact three video titles implemented as waiting entries, **0/3 playable**, no invented URL or empty player; AI/street interviews remain separate.
+- The three supplied YouTube URLs and the source-linked 1946 programme now replace the waiting entries: official lazy players/direct fallback links; Алаш background is separate from three core topics. Watch-page titles verified, full playback not claimed. [Video-specific outcomes/limits](VIDEO_VERIFICATION.md).
 
 ## Checks actually performed for this update
 

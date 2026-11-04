@@ -31,7 +31,11 @@ test('eleven wartime profiles are separate from science/context and map to ident
  assert.equal(registry.find(m=>m.id==='manshuk')?.kind,'commemorative portrait');
  assert.equal(registry.find(m=>m.id==='tolegen')?.kind,'museum portrait sculpture');
 });
-test('the three requested video titles are honest unconfigured entries with no invented media URL',()=>{
- assert.deepEqual(videoSlots.map(v=>v.title),['Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы','Алаш қозғалысы және қазақ зиялылары','Соғыс жылдарындағы Қазақстан мәдениеті']);
- assert(videoSlots.every(v=>v.state==='awaiting-media'&&v.media===null));
+test('three core videos plus Alash background retain supplied IDs and honest metadata',()=>{
+ assert.deepEqual(videoSlots.slice(0,3).map(v=>v.title),['Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы','Алаш қозғалысы және қазақ зиялылары','Соғыс жылдарындағы Қазақстан мәдениеті']);
+ assert.deepEqual(videoSlots.map(v=>v.videoId),['U_m3AiohJNI','8VoqgIjK-qw','xavwUCL0OkU','0xW-wV9tGDI']);
+ assert(videoSlots.every(v=>v.url===`https://www.youtube.com/watch?v=${v.videoId}`&&v.playbackCheckedOn===null&&v.duration===null&&v.transcript===null));
+ assert.deepEqual(videoSlots.map(v=>v.scope),['core','background','core','core']);
+ assert.equal(videoSlots.filter(v=>v.scope==='core').length,3);assert(videoSlots.find(v=>v.videoId==='0xW-wV9tGDI')?.sourceRefs.some(r=>r.sourceId==='postwar-video-1946'));
+ assert(videoSlots.slice(0,3).every(v=>v.creator===null));assert.deepEqual(validateContent({videoSlots},learningSources),[]);
 });

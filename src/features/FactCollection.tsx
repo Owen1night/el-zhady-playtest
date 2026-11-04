@@ -1,4 +1,4 @@
-import {rubricFacts,rubricTheses,videoSlots} from '../data/topic8';
+import {rubricFacts,rubricTheses} from '../data/topic8';
 import {learningFigures} from '../data/learning';
 import {References} from './Learning';
 import {EventVisual} from './ArchiveMedia';
@@ -12,4 +12,3 @@ export function FactCollection(){return <section className="fact-collection" ari
  <section id="historical-facts" tabIndex={-1}><div className="section-heading"><div><span className="eyebrow">ЖЕКЕ ДЕРЕКТЕР</span><h2>30 тарихи факт</h2></div></div><p className="collection-note">Әр нөмір — бір дербес тұжырым. Оқу мәтініндегі, хронологиядағы немесе ойындағы қайталануы жаңа факт ретінде есептелмейді.</p>
  <ol className="fact-grid">{rubricFacts.map(f=><li key={f.id}><article id={f.id} tabIndex={-1} className="reading-card rubric-fact" data-fact-number={f.number} data-claim-key={f.claimKey}><span className="archive-stamp">Факт {String(f.number).padStart(2,'0')}</span><EventVisual id={f.readingId} figureIds={f.figureIds} title={f.title} refs={f.sourceRefs}/><h3>{f.title}</h3><p>{f.text}</p><References refs={f.sourceRefs}/></article></li>)}</ol></section>
  </section>;}
-export function VideoCollection(){return <section className="video-collection"><div className="video-grid">{videoSlots.map(v=><article className="video-card" key={v.id} data-video-slot={v.id}><div className="video-placeholder" aria-label="Бейне әлі берілмеген"><span>БЕЙНЕ {String(v.number).padStart(2,'0')}</span></div><div className="video-copy"><h2>{v.title}</h2><p>{v.note}</p><p className="draft">Бейне URL-і немесе файлы күтіледі</p></div></article>)}</div><p className="caption">Қосылған тақырыптық бейне: 0 / 3. Бос карточкалар ойнатқыш емес. ЖИ мұғалімімен сұхбат пен көшедегі сұхбат — бөлек материалдар.</p></section>;}

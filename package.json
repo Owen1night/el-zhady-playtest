@@ -21,7 +21,8 @@
     "check:mixed-content": "node --import tsx scripts/generate-mixed-bank.ts --check",
     "test:practice:browser": "node --import tsx scripts/testing/practice-browser.ts",
     "check:media": "node scripts/fetch-reviewed-media.mjs --check",
-    "check:solo-content": "node --import tsx scripts/check-solo-content.ts"
+    "check:solo-content": "node --import tsx scripts/check-solo-content.ts",
+    "test:videos:browser": "node --import tsx scripts/testing/videos-browser.ts"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.8",

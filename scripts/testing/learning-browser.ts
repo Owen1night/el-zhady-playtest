@@ -4,6 +4,8 @@ import {chromium,webkit} from 'playwright';
 import assert from 'node:assert/strict';
 import {existsSync,realpathSync} from 'node:fs';
 import {mkdir} from 'node:fs/promises';
+import {learningVideos} from '../../src/data/videos';
+const orderedVideos=[...learningVideos.filter(v=>v.scope==='core'),...learningVideos.filter(v=>v.scope==='background')];
 process.env.VITE_SUPABASE_URL='';
 process.env.VITE_SUPABASE_PUBLISHABLE_KEY='';
 process.env.VITE_PUBLIC_SITE_URL='https://owen1night.github.io/el-zhady-playtest/';
@@ -81,8 +83,10 @@ try {
     for(const item of await page.locator('[data-fact-number],[data-thesis-number]').all())assert(await item.locator('.reading-sources a').count()>0);
    }
    if(section==='videos'){
-    assert.equal(await page.locator('[data-video-slot]').count(),3);assert.equal(await page.locator('video,iframe').count(),0);
-    assert.deepEqual(await page.locator('.video-copy h2').allTextContents(),['Қазақстандықтардың Ұлы Отан соғысы шайқастарына қатысуы','Алаш қозғалысы және қазақ зиялылары','Соғыс жылдарындағы Қазақстан мәдениеті']);
+    assert.equal(await page.locator('[data-video-slot]').count(),4);assert.equal(await page.locator('video,iframe').count(),0,'provider is not loaded without visitor action');
+    assert.equal(await page.locator('.video-youtube-link').count(),4);assert.equal(await page.locator('[data-video-scope=background]').count(),1);assert.equal(await page.locator('[data-video-scope=core]').count(),3);
+    assert.deepEqual(await page.locator('.video-youtube-link').evaluateAll(links=>links.map(a=>(a as HTMLAnchorElement).href)),orderedVideos.map(v=>v.url));
+    assert.deepEqual(await page.locator('.video-copy h2').allTextContents(),orderedVideos.map(v=>v.title));
     await page.screenshot({path:`work/learning-browser/videos-${width}${evidenceSuffix}.png`,fullPage:true});
    }
    for(const image of await page.locator('.archive-media img').all()){
@@ -94,7 +98,7 @@ try {
    if(section==='heroes')await page.locator('.person-card').first().screenshot({path:`work/learning-browser/portrait-card-${width}${evidenceSuffix}.png`});
    for(const card of await page.locator('.reading-card,.timeline-event-copy').all())assert.equal(await card.locator('figure').count(),1,'each historical card has a sourced visual');
    assert.equal(await page.locator('.media-missing').count(),0,'no failed local archive image is hidden behind a fallback');
-   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} ${section}: no overflow`);
+   assert(await page.evaluate(expected=>document.documentElement.scrollWidth<=expected,width),`${width} ${section}: no overflow`);
    if(['front','postwar','heroes','timeline','facts'].includes(section)){
     await page.evaluate(()=>scrollTo(0,0));if(['front','heroes','facts'].includes(section))await page.screenshot({path:`work/learning-browser/${section}-top-${width}${evidenceSuffix}.png`});await capturePage(page,`work/learning-browser/${section}-${width}${evidenceSuffix}.png`);
    }
@@ -112,7 +116,7 @@ try {
   await page.locator('.presentation-banner').waitFor();
   await page.reload();await page.locator('.presentation-banner').waitFor();
   assert(await page.evaluate(()=>document.documentElement.classList.contains('presentation')));
-  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} projection no overflow`);
+  assert(await page.evaluate(expected=>document.documentElement.scrollWidth<=expected,width),`${width} projection no overflow`);
   await page.screenshot({path:`work/learning-browser/projector-${width}${evidenceSuffix}.png`});
   await page.getByRole('button',{name:'Шығу',exact:true}).click();
   assert(!await page.evaluate(()=>document.documentElement.classList.contains('presentation')));

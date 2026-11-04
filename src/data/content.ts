@@ -1,4 +1,5 @@
 import {rubricFacts,rubricTheses} from './topic8';
+import {learningVideos} from './videos';
 import { learningFigures, learningSources, learningTimeline } from './learning';
 import type { ActivityQuestion, ActivityType, HistoricalFact, HistoricalFigure, HistoricalImage, MapLocation, Section, Source, Thesis, TimelineEvent, Video } from './types';
 
@@ -11,7 +12,7 @@ export const timelineEvents: TimelineEvent[] = learningTimeline;
 export const sources: Source[] = learningSources;
 export const images: HistoricalImage[] = [];
 export const mapLocations: MapLocation[] = [];
-export const videos: Video[] = [];
+export const videos: Video[] = learningVideos;
 export const questions: ActivityQuestion[] = [];
 export const sections: Section[] = [
   { id: 'home', label: 'Басты бет', eyebrow: 'Университеттік оқу жобасы', title: 'Ел жады', description: 'Қазақстан, 1939–1953' },
@@ -21,7 +22,7 @@ export const sections: Section[] = [
   { id: 'homefront', label: 'Тыл', eyebrow: '04 / Еңбек және қоғам', title: 'Тылдағы өмір', description: 'Еңбек, эвакуация және күнделікті өмір тақырыптарын зерттеуге арналған кеңістік.' },
   { id: 'postwar', label: 'Соғыстан кейін', eyebrow: '05 / Қайта құру және мәдениет', title: 'Соғыстан кейінгі Қазақстан', description: 'Қалпына келтіру, Ғылым академиясы, әдебиет, өнер және ғалымдарды қудалау тақырыптары қамтылады.' },
   { id: 'facts', label: 'Деректер', eyebrow: '06 / Зерттеу қоры', title: 'Деректен — түсінікке', description: '10 негізгі тезис және 30 бөлек нөмірленген тарихи факт. Әр тұжырымның дереккөзі көрсетілген.' },
-  { id: 'videos', label: 'Бейнебөлім', eyebrow: '07 / Көріп, ой елегінен өткізу', title: 'Тарих экранда', description: 'Үш тақырыптық бейне үшін дайындалған бөлім. URL немесе файл жоба иесінен күтіледі.' },
+  { id: 'videos', label: 'Бейнебөлім', eyebrow: '07 / Көріп, ой елегінен өткізу', title: 'Тарих экранда', description: 'Майдан, соғыс жылдарындағы мәдениет және соғыстан кейінгі Қазақстан туралы үш бейне. Алаш — бөлек тарихи алғышарт. Әр бейне YouTube сілтемесімен берілген.' },
   { id: 'games', label: 'Ойындар', eyebrow: '08 / Білімді бекіту', title: 'Ойлан. Байланыстыр. Тексер.', description: 'Бес жеке жаттығу. Әрқайсысы — 20 ұпай, жалпы нәтиже — 100. Тұрақты аккаунтпен жалғастырыңыз.' },
   { id: 'results', label: 'Нәтиже', eyebrow: '09 / Жеке қорытынды', title: 'Сіздің оқу жолыңыз', description: 'Бес жаттығудың ең жақсы ұпайлары және /100 қорытындысы. Сайыс нәтижелері бөлек сақталады.' },
   { id: 'sources', label: 'Дереккөздер', eyebrow: '10 / Академиялық ашықтық', title: 'Әр тұжырымның артында — дерек', description: 'Әр тарихи мәлімет, сурет, карта және дұрыс жауап дереккөзге сілтемемен берілуі тиіс.' },

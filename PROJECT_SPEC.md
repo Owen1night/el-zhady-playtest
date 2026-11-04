@@ -32,7 +32,7 @@ Content is **sourced**, not academically verified. Text interpretation, source q
 | Тыл | Evacuation, public aid, children, cinema |
 | Соғыстан кейін | Reconstruction, Academy, books, literature, persecution, Semey through 1953 |
 | Деректер | 10 arguments + 30 separately numbered facts; references and accessible fact jumps |
-| Бейнебөлім | Three exact requested titles awaiting owner URLs/files; no fabricated media |
+| Бейнебөлім | Three supplied YouTube links plus a source-linked 1946 programme; click-to-load official players, inline controls/no autoplay, permanent fallbacks; 3 core + Алаш background |
 | Ойындар | Five existing solo activities; permanent-account gate and actual results |
 | Нәтиже | Practice /100 separate from live history |
 | Дереккөздер | Text source catalogue; image rights additionally below each image |
@@ -51,4 +51,4 @@ Phone layouts collapse to one column. Native controls have selected/focus states
 
 Type/content/media/frozen-bank/build checks, distinct-count/source tests, every narrow-phone portrait, navigation/map/period/video waiting-state/overflow checks, existing practice/SQL regressions. See REVIEW_VERIFICATION.md for actual outcomes and screenshots. Browser emulation is not physical iPhone/Android certification.
 
-Keep the draft unmerged and undeployed for owner review. Topic videos remain 0/3 playable; stronger archive portraits/provenance and historian/Kazakh editorial review are recorded gaps. No hosted SQL/Cron setup is part of this update.
+Keep the draft unmerged and undeployed for owner review. Four watch-page links are connected, including three core topics; full playback remains unverified; stronger archive portraits/provenance and historian/Kazakh editorial review are recorded gaps. No hosted SQL/Cron setup is part of this update.

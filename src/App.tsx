@@ -1,4 +1,5 @@
-import {FactCollection,VideoCollection} from './features/FactCollection';
+import {FactCollection} from './features/FactCollection';
+import {VideoCollection} from './features/VideoCollection';
 import { PracticePage, PracticeScores } from './practice/PracticePage';
 import { AccountGate } from './features/Shared';
 import { LearningAtlas } from './features/LearningAtlas';
@@ -107,7 +108,7 @@ export default function App() {
         <section className="page-width section-space"><div className="editorial-note"><Shield size={30} strokeWidth={1.2} /><div><span className="eyebrow">ДЕРЕККЕ ҚҰРМЕТ</span><h2>Тарих дәлдіктен басталады.</h2><p>Алғашқы оқу мәтіндері мен уақыт желісі ашық қолжетімді. Әр тұжырымның дереккөзі көрсетілген. 10 тезис, 30 жеке факт және 11 соғыс қаһарманының профильдері жарияланған. Академиялық рецензия мен үш тақырыптық бейне әлі қажет.</p></div><a className="inline-link" href={link('sources')}>Дереккөздер <ArrowUpRight size={18} /></a></div></section>
       </> : <div className="page-width inner-page">
         <a className="breadcrumb" href={link('home')}>Басты бет <ChevronRight size={14} /><span>{section?.label || 'Бөлім табылмады'}</span></a>
-        <div className="page-heading"><span className="eyebrow">{section?.eyebrow || '404 / Навигация'}</span><h1>{section?.title || 'Бұл бөлім табылмады'}</h1><p>{section?.description || 'Бөлімдер мәзірінен оқу бағытын таңдаңыз.'}</p>{current !== 'results' && !['timeline','front','heroes','homefront','postwar','facts','sources','games'].includes(current) && !accountSections[current] && <Draft />}</div>
+        <div className="page-heading"><span className="eyebrow">{section?.eyebrow || '404 / Навигация'}</span><h1>{section?.title || 'Бұл бөлім табылмады'}</h1><p>{section?.description || 'Бөлімдер мәзірінен оқу бағытын таңдаңыз.'}</p>{current !== 'results' && !['timeline','front','heroes','homefront','postwar','facts','sources','games','videos'].includes(current) && !accountSections[current] && <Draft />}</div>
         {current === 'missing' && <a className="button primary" href={link('home')}>Басты бетке оралу <ArrowRight size={18} /></a>}
         {current === 'timeline' && <>{timeline}<LearningReadings section="front" /></>}
         {sectionPlans[current] && <>{current==='front'&&<LearningAtlas />}<LearningReadings section={current} /></>}

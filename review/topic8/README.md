@@ -9,8 +9,10 @@ Local Chromium screenshots of the draft, **not a deployed preview or physical iP
 | Деректер: 10 theses + 30 facts | [Overview](facts-top-360.png), [theses](main-theses-360.png), [facts](historical-facts-360.png) | [1920px](facts-top-1920.png) |
 | Батырлар: 11 wartime / 3 postwar / 2 context | [360px](heroes-top-360.png) | [1920px](heroes-top-1920.png) |
 | Atlas | All locations have text alternatives; keyboard selection checked | [1920px](front-top-1920.png) |
-| Video waiting states: exact three titles, 0/3 playable | [360px](videos-360.png) | [768px](videos-768.png), [1920px](videos-1920.png) |
+| Four YouTube links: 3 core + 1 background | [360px](videos-360.png) | [768px](videos-768.png), [1920px](videos-1920.png) |
 | Existing controls | [Period markers](period-controls-360.png) | [Classroom projection](projector-1920.png) |
+
+Video screenshots show the initial click-to-load cards, not a claim of live playback. [Player/error/navigation test evidence](../videos/README.md) uses clearly labelled provider fixtures.
 
 ## Every named-person portrait at 360px
 

@@ -16,7 +16,7 @@ Current scope: Owen1night/el-zhady-playtest draft PR #1, branch `codex/solo-prac
 | Academy of Sciences | Facts 22–23; postwar | Sourced material present |
 | Literature/art | Facts 11–12, 27; cinema/literature | Sourced readings present; fuller artistic analysis remains editorial work |
 | Persecution of scholars | Facts 25–29; Бекмаханов | Sourced material; disputed precise sentence day omitted |
-| Three functioning topic videos | Бейнебөлім | **Incomplete: 0/3 playable.** Three exact requested titles await owner URLs/files; no broken players |
+| Three functioning topic videos | Бейнебөлім | 4 watch pages/title matches checked (3 supplied + sourced 1946 programme); official click-to-load embeds + fallback links implemented. **3 core-topic + 1 Алаш background**. Full playback/embedding/captions/device acceptance still unverified; do not count as three verified core-topic videos |
 | AI/street interviews | Separate owner materials | Not counted as the three topic videos |
 | Images/captions/credits | 16 image-first profiles; historical cards | Local identified photographs or explicitly labelled stamp/coin/bust portraits; rights below each image |
 | Actual Мәншүк stamp | Front/heroes, separate artefact | Preserved 1995 original; not presented as a wartime photo |
@@ -32,7 +32,7 @@ Current scope: Owen1night/el-zhady-playtest draft PR #1, branch `codex/solo-prac
 | Responsive / no 360px overflow | Eight public sections | Browser checks at 360/390/768/1366/1920px; physical Safari acceptance still needed |
 | Touch targets / no hover or drag dependency | Native controls and menus | Existing >=44px period/navigation controls, touch and keyboard paths retained |
 | Readability / keyboard focus | Fonts, source lists, fact jumps | Browser-checked; full assistive-technology audit pending |
-| Video controls/inline playback | Future supplied media | Pending actual media; no empty player |
+| Video controls/inline playback | Future supplied media | YouTube controls/playsinline=1, no autoplay, fullscreen, finite error/retry and fallback paths checked with explicit browser fixtures; actual device playback pending |
 | Projection mode | Local CSS preference | Existing enlarged text/spacing, phone-menu toggle, persistence and exit; no host permission effect |
 | Share / QR | Configured real site URL | Existing isolated-host guards retained; no localhost public links |
 | Motion/reduced motion/no automatic audio | Existing CSS/game feedback | Preserved; no new flashing/audio |

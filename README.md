@@ -25,7 +25,7 @@ npm run build
 npm run preview -- --port 4173
 ```
 
-Open the local URL printed by Vite, then `#/facts`, `#/heroes`, `#/timeline` or `#/videos`. This is local QA, not a newly published public preview. The three video titles await owner URLs/files; no players are displayed.
+Open the local URL printed by Vite, then `#/facts`, `#/heroes`, `#/timeline` or `#/videos`. This is local QA, not a newly published public preview. The three supplied YouTube watch links plus a sourced 1946 postwar selection are connected. Players load only after a click, without autoplay, with permanent YouTube fallback links. Алаш is labelled background context. Watch-page titles were checked; full playback, embedding permissions and captions remain unverified. See [video verification](VIDEO_VERIFICATION.md) and [exact later manual deployment steps](PLAYTEST_DEPLOYMENT.md).
 
 ```bash
 npm run check
@@ -36,6 +36,7 @@ npm run check:solo-content
 npm run build
 npm run test:learning:browser
 npm run test:practice:browser
+npm run test:videos:browser
 ```
 
 Browser scripts use local disposable fixtures; `BROWSER=webkit` selects WebKit when installed. For independent-connection races use a disposable PostgreSQL 17 service on loopback port 55433 with `LIVE_QUIZ_TEST_DATABASE_URL=postgresql://postgres@127.0.0.1:55433/postgres`; never pass a hosted connection URL. Fixtures create/drop only their temporary local databases. No lint script exists.

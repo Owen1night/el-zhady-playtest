@@ -26,7 +26,7 @@ export type MapLocation = Sourced<{
 }>;
 export type Video = Sourced<{
   id: string; title: string; url: string; provider: 'file' | 'youtube';
-  creator: string; duration: string; captionUrl?: string; transcript: string; checkedOn?: string;
+  creator: string | null; duration: string | null; captionUrl?: string; transcript: string | null; checkedOn?: string;
 }>;
 export type Answer = Sourced<{ id: string; text: string; explanation: string }>;
 export type QuestionBase = Sourced<{ id: string; prompt: string; explanation: string }>;

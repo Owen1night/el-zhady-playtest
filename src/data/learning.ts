@@ -1,4 +1,5 @@
 import {topic8Sources} from './topic8-sources';
+import {videoSources} from './videos';
 import {additionalWarHeroes} from './war-heroes';
 import type { HistoricalFact, HistoricalFigure, Source, TimelineEvent } from './types';
 const note = 'Дерекпен салыстырылған оқу мәтіні. Академиялық және қазақша редакторлық рецензия әлі қажет.';
@@ -13,7 +14,7 @@ const originalLearningSources: Source[] = [
   { id: 'ctbto', title: 'International Day against Nuclear Tests', publisher: 'CTBTO', url: 'https://www.ctbto.org/news-and-events/international-day-against-nuclear-tests', publicationDate: '', author: 'CTBTO' },
   { id: 'stamp', title: 'File:Manshuk Mametova stamp.jpg', publisher: 'Wikimedia Commons', url: 'https://commons.wikimedia.org/wiki/File:Manshuk_Mametova_stamp.jpg', publicationDate: '', author: 'Post of Kazakhstan' },
 ].map(s => ({ ...s, status: 'checked', accessedOn: '2026-11-03', notes: 'Көрсетілген үзінділер осы күні ашылып салыстырылды; бүкіл басылым рецензияланды дегенді білдірмейді.' }));
-export const learningSources:Source[]=[...originalLearningSources,...topic8Sources];
+export const learningSources:Source[]=[...originalLearningSources,...topic8Sources,...videoSources];
 export const learningFacts: HistoricalFact[] = [
   { id: 'war-periods', title: '1939 және 1941 — екі түрлі бастау', text: 'Екінші дүниежүзілік соғыс 1939 жылғы 1 қыркүйекте Германияның Польшаға басып кіруімен басталды. 1941 жылғы 22 маусымда Германия КСРО-ға шабуыл жасады. Қазақстан тарихында Ұлы Отан соғысы деп аталатын 1941–1945 кезеңі осы кең соғыстың бір бөлігі.', period: 'context', figureIds: [], status:'sourced',checkedOn:'2026-11-04',editorialNote:note,sourceRefs:[{sourceId:'ushmm',locator:'September 1, 1939; June 22, 1941; FAQ'},{sourceId:'kz-archive-term',locator:'Кіріспе: 1941–1945 жылдардағы Ұлы Отан соғысы'}] },
   { id: 'front-women', title: 'Майдандағы әйелдер', text: 'Әлия Молдағұлова мерген, Мәншүк Мәметова пулеметші болды. Олардың жолын тек марапатпен шектемей, әскери мамандығы мен адам тағдыры арқылы да тану маңызды.', period: 'war', figureIds: ['aliya','manshuk'], ...sourced('west','Әлия мен Мәншүктің әскери мамандықтары аталған абзац') },

@@ -50,8 +50,10 @@ jobs:
           npm run test:mixed:browser
           npm run test:learning:browser
           npm run test:practice:browser
+          npm run test:videos:browser
           BROWSER=webkit npm run test:learning:browser
           BROWSER=webkit npm run test:practice:browser
+          BROWSER=webkit npm run test:videos:browser
       - name: Save review screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -61,5 +63,6 @@ jobs:
             work/mixed-browser/*.png
             work/learning-browser/*.png
             work/practice-browser/*.png
+            work/videos-browser/*.png
           if-no-files-found: ignore
           retention-days: 7
